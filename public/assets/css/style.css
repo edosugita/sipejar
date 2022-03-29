@@ -1,0 +1,176 @@
+/* NAVBAR */
+
+/* img */
+.img-profile {
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+}
+
+.img-profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* name */
+.navbar-light .navbar-nav .nav-link.disabled {
+  color: rgba(0, 0, 0, 0.616) !important;
+  
+}
+
+/* RESPONSIVE */
+@media (min-width: 400px) {
+  .navbar-expand-lg .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto;
+  }
+
+  .navbar-expand-lg .navbar-nav {
+    flex-direction: row;
+  }
+
+  .navbar-expand-lg .navbar-toggler {
+    display: none;
+  }
+}
+
+/* MAIN */
+
+.card {
+  border-radius: 10px !important;
+  height: 380px;
+}
+
+.card-text {
+  text-decoration: none;
+  color: #212529;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.card-text:hover {
+  color: #555c63;
+  transition: all 0.3s;
+}
+
+.card-body .card-title {
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+.matkul-img img {
+  width: 100%px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.progress-matkul {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding-right: 35px;
+}
+
+.progress-matkul .progress {
+  width: 100%;
+}
+
+/* MATKUL */
+.nama-matkul {
+  margin-bottom: 20px;
+}
+.nama-matkul h6 {
+  background: #52575e;
+  border-radius: 10px;
+  padding: 15px;
+  color: #f8f9fa;
+  text-transform: uppercase;
+}
+
+.matkul {
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 5px;
+  padding: 30px;
+  margin: 0 0 20px 0;
+}
+
+.nama-pelajaran h5 {
+  background: #003b75;
+  color: #f8f9fa;
+  padding: 20px;
+  border-radius: 0 20px 20px 0;
+  margin: 0 0 20px -30px;
+}
+
+.matkul-information {
+  margin: 0 0 20px 0;
+}
+
+.materi-video {
+  margin-bottom: 20px;
+}
+
+.materi-video iframe {
+  width: auto;
+  height: auto;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.matkul-attendance {
+  margin: 0 0 20px 0;
+  font-size: 16px;
+  color: #333333;
+  cursor: pointer;
+}
+
+.matkul-attendance:hover {
+  color: #555c63;
+  transition: all 0.3s;
+}
+
+.matkul-attendance .fas {
+  margin-right: 20px;
+  font-size: 20px;
+}
+
+.matkul-form {
+  margin: 0 0 20px 0;
+  font-size: 16px;
+  color: #333333;
+  cursor: pointer;
+}
+
+.matkul-form:hover {
+  color: #555c63;
+  transition: all 0.3s;
+}
+
+.matkul-form .fas {
+  margin-right: 30px;
+  font-size: 20px;
+}
+
+/* navbar */
+.nav-main ol {
+  background: #f8f9fa;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* FOOTER */
+
+.footer {
+  background: #dbdbdb;
+  position: absolute;
+  bottom: auto;
+  width: 100%;
+  padding: 20px 20px 0 20px;
+  color: #333333;
+  text-align: center;
+}
