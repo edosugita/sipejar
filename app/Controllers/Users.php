@@ -19,4 +19,12 @@ class Users extends BaseController
         ];
         return view('users/matkul', $data);
     }
+
+    public function profile()
+    {
+        $data = [
+            'title' => 'Profil',
+        ];
+        return view('temp_user/index', $data);
+    }
 }
