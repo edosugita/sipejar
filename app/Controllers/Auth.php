@@ -6,11 +6,20 @@ class Auth extends BaseController
 {
     public function login()
     {
-        return view('auth/login');
+        $data = [
+            'title'  => 'Login',
+            'config' => config('Auth'),
+        ];
+
+        return view('auth/login', $data);
     }
 
     public function register()
     {
-        return view('auth/register');
+        $data = [
+            'title'  => 'Register',
+        ];
+
+        return view('auth/register', $data);
     }
 }
