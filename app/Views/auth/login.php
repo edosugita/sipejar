@@ -23,10 +23,11 @@
                                 <form class="user" action="<?= route_to('login') ?>" method="post">
                                     <?= csrf_field() ?>
 
-                                    <?php if ($config->validFields === ['nis']): ?>
+
+                                    <?php if (in_array('nis', $config->validFields)): ?>
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user <?php if(session('errors.login')) : ?>is-invalid<?php endif ?>" 
-                                                name="nis" placeholder="NIS">
+                                                name="login" placeholder="NIS">
                                             <div class="invalid-feedback">
 								                <?= session('errors.login') ?>
 							                </div>
