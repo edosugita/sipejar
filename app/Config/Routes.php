@@ -33,6 +33,9 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Users::index');
 $routes->get('/matkul', 'Users::matkul');
+$routes->get('/presensi', 'Users::presensi');
+$routes->get('/tugas', 'Users::tugas');
+$routes->get('/pengumpulan', 'Users::pengumpulan');
 
 /*
  * --------------------------------------------------------------------
