@@ -35,6 +35,7 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Users::index');
 $routes->get('/matkul', 'Users::matkul');
 $routes->get('/profil', 'Users::profile');
+$routes->get('/discussion', 'Chat::index');
 $routes->get('/login', 'Auth::login');
 $routes->get('/register', 'Auth::register');
 
