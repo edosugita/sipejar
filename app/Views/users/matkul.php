@@ -5,25 +5,11 @@ $this->section('content');
 <main class="mt-3">
     <div class="container">
         <div class="row">
-            <div class="col-12 mb-2">
-                <nav aria-label="breadcrumb" class="nav-main">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item active" aria-current="page">Home</li>
-                        <li class="breadcrumb-item"><a href="#">Library</a></li>
-                    </ol>
-                </nav>
-            </div>
-            <div class="col-md-3 col-3">
-                <div class="list-group">
-                    <button type="button" class="list-group-item list-group-item-action active" aria-current="true">
-                        The current button
-                    </button>
-                    <button type="button" class="list-group-item list-group-item-action">A second item</button>
-                    <button type="button" class="list-group-item list-group-item-action">A third button item</button>
-                    <button type="button" class="list-group-item list-group-item-action">A fourth button item</button>
-                    <button type="button" class="list-group-item list-group-item-action" disabled>A disabled button item</button>
-                </div>
-            </div>
+
+            <?= $this->include('templates/users/breadcrumb'); ?>
+
+            <?= $this->include('templates/users/navigation'); ?>
+
             <div class="col-md-9 col-9">
                 <div class="row">
 
@@ -59,7 +45,7 @@ $this->section('content');
                                     </div>
                                 </div>
                                 <div class="col-10">
-                                    <div class="matkul-attendance">
+                                    <div class="matkul-attendance" onclick="location.href='<?= base_url() ?>/presensi'">
                                         <i class="fas fa-user-friends"></i>
                                         Attendance
                                     </div>
@@ -72,9 +58,9 @@ $this->section('content');
                                     </div>
                                 </div>
                                 <div class="col-10">
-                                    <div class="matkul-form">
+                                    <div class="matkul-form" onclick="location.href='<?= base_url() ?>/tugas'">
                                         <i class="fas fa-file-alt"></i>
-                                        UTS
+                                        Tugas
                                     </div>
                                 </div>
                                 <div class="col-2">
@@ -102,7 +88,7 @@ $this->section('content');
                                     </div>
                                 </div>
                                 <div class="col-10">
-                                    <div class="matkul-attendance">
+                                    <div class="matkul-attendance" onclick="location.href='<?= base_url() ?>/presensi'">
                                         <i class="fas fa-user-friends"></i>
                                         Attendance
                                     </div>
@@ -115,9 +101,9 @@ $this->section('content');
                                     </div>
                                 </div>
                                 <div class="col-10">
-                                    <div class="matkul-form">
+                                    <div class="matkul-form" onclick="location.href='<?= base_url() ?>/tugas'">
                                         <i class="fas fa-file-alt"></i>
-                                        UTS
+                                        Tugas
                                     </div>
                                 </div>
                                 <div class="col-2">
@@ -145,7 +131,7 @@ $this->section('content');
                                     </div>
                                 </div>
                                 <div class="col-10">
-                                    <div class="matkul-attendance">
+                                    <div class="matkul-attendance" onclick="location.href='<?= base_url() ?>/presensi'">
                                         <i class="fas fa-user-friends"></i>
                                         Attendance
                                     </div>

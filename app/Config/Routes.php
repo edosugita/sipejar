@@ -32,7 +32,35 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Users::index');
-$routes->get('/matkul', 'Users::matkul');
+$routes->get('/matakuliah/(:segment)', 'Users::matkul/$1');
+$routes->get('/presensi', 'Users::presensi');
+$routes->get('/tugas', 'Users::tugas');
+$routes->get('/pengumpulan', 'Users::pengumpulan');
+
+// TEACHER
+
+$routes->match(['get', 'post'], '/teacher/login', 'TeachersAuth::index', ['filter' => 'NoAuthFilter']);
+
+$routes->group('', ['filter' => 'AuthFilter'], function ($routes) {
+
+    // LOGOUT
+    $routes->match(['get', 'post'], '/logout', 'TeachersAuth::logout');
+
+    $routes->group('teacher', function ($routes) {
+        $routes->get('/', 'Teachers::index');
+        $routes->match(['get', 'post'], 'add/matkul', 'Teachers::add');
+        $routes->get('matakuliah/(:segment)', 'Teachers::MatkulInfo/$1');
+
+        $routes->match(['get', 'post'], 'matakuliah/(:segment)/add', 'Teachers::AddTugas/$1');
+
+        $routes->match(['get', 'post'], 'matakuliah/(:segment)/presensi/(:num)', 'Presensi::index/$1');
+
+        $routes->get('tugas/(:segment)', 'Teachers::TugasInfo/$1');
+
+        // SETTING
+        $routes->match(['get', 'post'], 'setting', 'Setting::index');
+    });
+});
 
 /*
  * --------------------------------------------------------------------
