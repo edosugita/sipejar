@@ -25,7 +25,7 @@ $this->section('content');
                             <div class="matkul-img"></div>
                             <div class="card-body">
                                 <h5 class="card-title">S1 Teknik Informatika</h5>
-                                <a href="<?= base_url() ?>/matkul" class="card-text">Aljabar Linier</a>
+                                <a href="<?= base_url() ?>/matakuliah" class="card-text">Aljabar Linier</a>
                                 <div class="progress-matkul mb-3">
                                     <label class="label">Progress</label>
                                     <div class="progress">
