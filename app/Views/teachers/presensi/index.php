@@ -5,12 +5,10 @@ $this->section('content');
 <main class="mt-3">
     <div class="container">
         <div class="row">
-
-            <?= $this->include('templates/users/breadcrumb'); ?>
-
-            <?= $this->include('templates/users/navigation'); ?>
-
-            <div class="col-md-9 col-9">
+            <div class="col-md-12">
+                <button type="button" class="btn btn-primary mb-4" onclick="history.back()"><i class="fas fa-arrow-left me-3"></i> Back</button>
+            </div>
+            <div class="col-md-12">
                 <div class="row">
 
                     <div class="col-12">
@@ -23,68 +21,31 @@ $this->section('content');
                         <div class="bg-white p-3 rounded">
                             <div class="d-flex justify-content-between">
                                 <h6>Jumlah Siswa : 200</h6>
-                                <h6>Hadir</h6>
                             </div>
                             <hr>
-                            <div class="user-ed d-flex align-items-end justify-content-between mb-3">
-                                <div class="d-flex align-items-end">
-                                    <div class="rounded-circle bg-white me-3" style="width: 50px; height: 50px; overflow: hidden;">
-                                        <img style="width: 100%;" src="<?= base_url('assets/content/images/user.png') ?>" alt="">
-                                    </div>
-                                    <p>eeeee</p>
-                                </div>
-                                <p>0/1</p>
-                            </div>
-                            <hr>
-                            <div class="user-ed d-flex align-items-end justify-content-between mb-3">
-                                <div class="d-flex align-items-end">
-                                    <div class="rounded-circle bg-white me-3" style="width: 50px; height: 50px; overflow: hidden;">
-                                        <img style="width: 100%;" src="<?= base_url('assets/content/images/user.png') ?>" alt="">
-                                    </div>
-                                    <p>eeeee</p>
-                                </div>
-                                <p>0/1</p>
-                            </div>
-                            <hr>
-                            <div class="user-ed d-flex align-items-end justify-content-between mb-3">
-                                <div class="d-flex align-items-end">
-                                    <div class="rounded-circle bg-white me-3" style="width: 50px; height: 50px; overflow: hidden;">
-                                        <img style="width: 100%;" src="<?= base_url('assets/content/images/user.png') ?>" alt="">
-                                    </div>
-                                    <p>eeeee</p>
-                                </div>
-                                <p>0/1</p>
-                            </div>
-                            <hr>
-                            <div class="user-ed d-flex align-items-end justify-content-between mb-3">
-                                <div class="d-flex align-items-end">
-                                    <div class="rounded-circle bg-white me-3" style="width: 50px; height: 50px; overflow: hidden;">
-                                        <img style="width: 100%;" src="<?= base_url('assets/content/images/user.png') ?>" alt="">
-                                    </div>
-                                    <p>eeeee</p>
-                                </div>
-                                <p>0/1</p>
-                            </div>
-                            <hr>
-                            <div class="user-ed d-flex align-items-end justify-content-between mb-3">
-                                <div class="d-flex align-items-end">
-                                    <div class="rounded-circle bg-white me-3" style="width: 50px; height: 50px; overflow: hidden;">
-                                        <img style="width: 100%;" src="<?= base_url('assets/content/images/user.png') ?>" alt="">
-                                    </div>
-                                    <p>eeeee</p>
-                                </div>
-                                <p>0/1</p>
-                            </div>
-                            <hr>
-                            <div class="user-ed d-flex align-items-end justify-content-between mb-3">
-                                <div class="d-flex align-items-end">
-                                    <div class="rounded-circle bg-white me-3" style="width: 50px; height: 50px; overflow: hidden;">
-                                        <img style="width: 100%;" src="<?= base_url('assets/content/images/user.png') ?>" alt="">
-                                    </div>
-                                    <p>eeeee</p>
-                                </div>
-                                <p>0/1</p>
-                            </div>
+                            <table class="table table-borderless table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">No</th>
+                                        <th scope="col">Nama</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col">Edit</th>
+                                    </tr>
+                                </thead>
+                                <?php $i = 1 ?>
+                                <tbody>
+                                    <tr>
+                                        <td><?= $i++ ?></td>
+                                        <td>
+                                            <p>eeeee333333333333333333333333</p>
+                                        </td>
+                                        <td>0/2</td>
+                                        <td>
+                                            <a href="#" class="btn btn-warning"><i class="fas fa-pen"></i> edit</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
