@@ -60,6 +60,8 @@ $routes->group('', ['filter' => 'AuthFilter'], function ($routes) {
 
         $routes->get('matakuliah/tugas/(:segment)', 'TugasSiswa::index/$1');
 
+        $routes->match(['get', 'post'], 'matakuliah/matematika/edit/tugas/(:num)', 'TugasSiswa::edit/$1');
+
         // SETTING
         $routes->match(['get', 'post'], 'setting', 'Setting::index');
     });

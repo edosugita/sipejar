@@ -8,9 +8,7 @@ $this->section('content');
 
             <?= $this->include('templates/teachers/breadcrumb'); ?>
 
-            <?= $this->include('templates/teachers/navigation'); ?>
-
-            <div class="col-md-9 col-9">
+            <div class="col-md-12">
                 <div class="row">
 
                     <div class="col-12">
@@ -77,7 +75,7 @@ $this->section('content');
                                         <div class="col-10">
                                             <div class="matkul-form" onclick="location.href='<?= base_url() ?>/teacher/ulangan/<?= $matkul['slug'] ?>'">
                                                 <i class="fas fa-file-alt"></i>
-                                                UAS/UTS
+                                                Ujian
                                             </div>
                                         </div>
                                         <div class="col-2">
@@ -91,7 +89,7 @@ $this->section('content');
                                     <div class="col-12 mt-2">
                                         <div class="d-flex">
                                             <div class="ms-auto">
-                                                <button type="button" class="btn btn-warning " data-bs-toggle="modal" data-bs-target="#addClass">Edit</button>
+                                                <a href="<?= base_url('/teacher/matakuliah/matematika/edit/tugas/' . $data['id_tugas']) ?>" class="btn btn-warning">Edit</a>
                                             </div>
                                         </div>
                                     </div>

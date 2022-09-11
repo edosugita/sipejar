@@ -26,8 +26,6 @@ $this->section('content');
             <?php endif; ?>
             <!-- ALERT END -->
 
-            <?= $this->include('templates/teachers/breadcrumb'); ?>
-
             <!-- CONTENT -->
             <div class="col-md-12 mt-4">
                 <div class="row">

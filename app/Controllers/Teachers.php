@@ -52,6 +52,12 @@ class Teachers extends BaseController
                         'required' => 'Nama matkul harus di isi',
                     ]
                 ],
+                'departement' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => 'Departement matkul harus di isi',
+                    ]
+                ],
             ]);
 
             if (!$validation) {
