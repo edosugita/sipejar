@@ -1,5 +1,5 @@
 <?=
-$this->extend('templates/users/templates');
+$this->extend('templates/teachers/templates');
 $this->section('content');
 ?>
 
@@ -7,7 +7,7 @@ $this->section('content');
     <div class="container">
         <div class="row">
 
-            <?= $this->include('templates/users/breadcrumb'); ?>
+            <?= $this->include('templates/teachers/breadcrumb'); ?>
 
             <!-- CONTENT -->
             <div class="col-md-12 mt-4">
@@ -101,7 +101,7 @@ $this->section('content');
                                 <div class="mb-3">
                                     <div class="row">
                                         <div class="col-12 d-flex justify-content-end">
-                                            <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal">Close</button>
+                                            <button type="button" c onclick="history.back()" class="btn btn-secondary me-2" data-bs-dismiss="modal">Close</button>
                                             <button type="submit" class="btn btn-primary">Save changes</button>
                                         </div>
                                     </div>

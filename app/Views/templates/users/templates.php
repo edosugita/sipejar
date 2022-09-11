@@ -15,46 +15,22 @@
     <script src="https://kit.fontawesome.com/4ca208cb2e.js" crossorigin="anonymous"></script>
 </head>
 
-<?php if ($guru['bg_image'] == null) : ?>
+<body class="bg-white">
+    <!-- HEADER -->
+    <?= $this->include('templates/users/header') ?>
+    <!-- END HEADER -->
 
-    <body class="bg-white">
-        <!-- HEADER -->
-        <?= $this->include('templates/users/header') ?>
-        <!-- END HEADER -->
+    <!-- MAIN -->
+    <?= $this->renderSection('content'); ?>
+    <!-- END MAIN -->
 
-        <!-- MAIN -->
-        <?= $this->renderSection('content'); ?>
-        <!-- END MAIN -->
+    <!-- FOOTER -->
+    <?= $this->include('templates/users/footer'); ?>
+    <!-- END FOOTER -->
 
-        <!-- FOOTER -->
-        <?= $this->include('templates/users/footer'); ?>
-        <!-- END FOOTER -->
-
-        <!-- JS -->
-        <?= $this->renderSection('js'); ?>
-        <!-- END JS -->
-    </body>
-
-<?php else : ?>
-
-    <body style="background-image: url('<?= base_url('assets/content/images/' . $guru['bg_image']) ?>'); background-size: cover; background-repeat:no-repeat">
-        <!-- HEADER -->
-        <?= $this->include('templates/users/header') ?>
-        <!-- END HEADER -->
-
-        <!-- MAIN -->
-        <?= $this->renderSection('content'); ?>
-        <!-- END MAIN -->
-
-        <!-- FOOTER -->
-        <?= $this->include('templates/users/footer'); ?>
-        <!-- END FOOTER -->
-
-        <!-- JS -->
-        <?= $this->renderSection('js'); ?>
-        <!-- END JS -->
-    </body>
-
-<?php endif; ?>
+    <!-- JS -->
+    <?= $this->renderSection('js'); ?>
+    <!-- END JS -->
+</body>
 
 </html>

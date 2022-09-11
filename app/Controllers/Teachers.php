@@ -4,6 +4,8 @@ namespace App\Controllers;
 
 use App\Models\GuruModel;
 use App\Models\MatkulModel;
+use App\Models\ModelAbsenCreate;
+use App\Models\SiswaModel;
 use App\Models\TugasModel;
 
 class Teachers extends BaseController
@@ -16,6 +18,8 @@ class Teachers extends BaseController
         $this->matkulModel = new MatkulModel();
         $this->guru = new GuruModel();
         $this->tugasModel = new TugasModel();
+        $this->absenModel = new ModelAbsenCreate();
+        $this->siswaModel = new SiswaModel();
     }
 
     public function index()
@@ -177,6 +181,6 @@ class Teachers extends BaseController
             'matkul' => $matkul,
         ];
 
-        return view('teachers/tugas', $data);
+        return view('teachers/tugassiswa/index', $data);
     }
 }

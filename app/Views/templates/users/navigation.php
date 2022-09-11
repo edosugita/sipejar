@@ -5,9 +5,6 @@
     </div>
 
     <div class="list-group">
-        <a href="#" class="list-group-item list-group-item-action active">
-            Dashboard
-        </a>
         <button type="button" class="list-group-item list-group-item-action">Manajemen Inovasi</button>
         <button type="button" class="list-group-item list-group-item-action">Pendidikan Kewarganegaraan</button>
         <button type="button" class="list-group-item list-group-item-action">Pendidikan Bahasa Indonesia</button>

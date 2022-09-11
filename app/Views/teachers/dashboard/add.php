@@ -1,5 +1,5 @@
 <?=
-$this->extend('templates/users/templates');
+$this->extend('templates/teachers/templates');
 $this->section('content');
 ?>
 
@@ -26,7 +26,7 @@ $this->section('content');
             <?php endif; ?>
             <!-- ALERT END -->
 
-            <?= $this->include('templates/users/breadcrumb'); ?>
+            <?= $this->include('templates/teachers/breadcrumb'); ?>
 
             <!-- CONTENT -->
             <div class="col-12 mt-4">

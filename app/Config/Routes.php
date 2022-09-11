@@ -37,6 +37,9 @@ $routes->get('/presensi', 'Users::presensi');
 $routes->get('/tugas', 'Users::tugas');
 $routes->get('/pengumpulan', 'Users::pengumpulan');
 
+$routes->get('/login', 'Auth::login');
+$routes->get('/register', 'Auth::register');
+
 // TEACHER
 
 $routes->match(['get', 'post'], '/teacher/login', 'TeachersAuth::index', ['filter' => 'NoAuthFilter']);
@@ -55,7 +58,7 @@ $routes->group('', ['filter' => 'AuthFilter'], function ($routes) {
 
         $routes->match(['get', 'post'], 'matakuliah/(:segment)/presensi/(:num)', 'Presensi::index/$1');
 
-        $routes->get('tugas/(:segment)', 'Teachers::TugasInfo/$1');
+        $routes->get('matakuliah/tugas/(:segment)', 'TugasSiswa::index/$1');
 
         // SETTING
         $routes->match(['get', 'post'], 'setting', 'Setting::index');

@@ -1,5 +1,5 @@
 <?=
-$this->extend('templates/users/templates');
+$this->extend('templates/teachers/templates');
 $this->section('content');
 ?>
 <main class="mt-3">
@@ -20,7 +20,35 @@ $this->section('content');
                     <div class="col-12">
                         <div class="bg-white p-3 rounded">
                             <div class="d-flex justify-content-between">
-                                <h6>Jumlah Siswa : 200</h6>
+                                <h6>Jumlah Siswa : <?= $siswaCount[0]['id_kelas'] ?></h6>
+                            </div>
+                            <hr>
+                            <table class="table table-borderless table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">No</th>
+                                        <th scope="col">Nama</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php $i = 1 ?>
+                                    <?php foreach ($siswa as $data) : ?>
+                                        <tr>
+                                            <td><?= $i++ ?></td>
+                                            <td>
+                                                <p><?= $data['nama_siswa'] ?></p>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="bg-white p-3 rounded">
+                            <div class="d-flex justify-content-between">
+                                <h6>Total Absen : <?= $absen[0]['id_absen'] ?> Siswa</h6>
                             </div>
                             <hr>
                             <table class="table table-borderless table-striped">
@@ -29,21 +57,25 @@ $this->section('content');
                                         <th scope="col">No</th>
                                         <th scope="col">Nama</th>
                                         <th scope="col">Status</th>
-                                        <th scope="col">Edit</th>
+                                        <th scope="col">Waktu</th>
                                     </tr>
                                 </thead>
-                                <?php $i = 1 ?>
                                 <tbody>
-                                    <tr>
-                                        <td><?= $i++ ?></td>
-                                        <td>
-                                            <p>eeeee333333333333333333333333</p>
-                                        </td>
-                                        <td>0/2</td>
-                                        <td>
-                                            <a href="#" class="btn btn-warning"><i class="fas fa-pen"></i> edit</a>
-                                        </td>
-                                    </tr>
+                                    <?php $i = 1 ?>
+                                    <?php foreach ($namaAbsen as $data) : ?>
+                                        <tr>
+                                            <td><?= $i++ ?></td>
+                                            <td>
+                                                <p><?= $data['nama_siswa'] ?></p>
+                                            </td>
+                                            <?php if ($data['status'] == 1) : ?>
+                                                <td>Telat</td>
+                                            <?php elseif ($data['status'] == 2) : ?>
+                                                <td>Hadir</td>
+                                            <?php endif; ?>
+                                            <td><?= $data['created_at'] ?></td>
+                                        </tr>
+                                    <?php endforeach; ?>
                                 </tbody>
                             </table>
                         </div>

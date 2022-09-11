@@ -1,14 +1,14 @@
 <?=
-$this->extend('templates/users/templates');
+$this->extend('templates/teachers/templates');
 $this->section('content');
 ?>
 <main class="mt-3">
     <div class="container">
         <div class="row">
 
-            <?= $this->include('templates/users/breadcrumb'); ?>
+            <?= $this->include('templates/teachers/breadcrumb'); ?>
 
-            <?= $this->include('templates/users/navigation'); ?>
+            <?= $this->include('templates/teachers/navigation'); ?>
 
             <div class="col-md-9 col-9">
                 <div class="row">
@@ -60,7 +60,7 @@ $this->section('content');
                                     <?php endif;  ?>
                                     <?php if ($data['pengumpulan'] !== null) : ?>
                                         <div class="col-10">
-                                            <a style="text-decoration: none;" class="matkul-form" href="<?= base_url('/teacher/tugas/' . $t++) ?>">
+                                            <a style="text-decoration: none;" class="matkul-form" href="<?= base_url('/teacher/matakuliah/tugas/' . $matkul['slug']) ?>/">
                                                 <i class="fas fa-file-alt"></i>
                                                 Tugas
                                             </a>
