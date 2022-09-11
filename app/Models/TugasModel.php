@@ -14,7 +14,7 @@ class TugasModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id_matkul', 'pertemuan', 'nama_materi', 'deskripsi', 'absen', 'pengumpulan', 'ujian'];
+    protected $allowedFields    = ['id_matkul', 'pertemuan', 'nama_materi', 'deskripsi', 'absen', 'pengumpulan', 'ujian', 'file'];
 
     // Dates
     protected $useTimestamps = true;

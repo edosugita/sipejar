@@ -40,7 +40,7 @@ $this->section('content');
 
                     <div class="col-12">
                         <div class="bg-white p-3 rounded">
-                            <form action="<?= base_url('/teacher/matakuliah/' . $tugas[0]['id_tugas'] . '/edit/tugas/' . $tugas[0]['slug']) ?>" method="post">
+                            <form action="<?= base_url('/teacher/matakuliah/' . $tugas[0]['id_tugas'] . '/edit/tugas/' . $tugas[0]['slug']) ?>" method="post" enctype="multipart/form-data">
                                 <?= csrf_field() ?>
                                 <div class="mb-3">
                                     <label class="form-label">Nama Materi</label>
@@ -79,6 +79,13 @@ $this->section('content');
                                         <label class="form-check-label" for="uas" style="cursor: pointer;">
                                             Ujian
                                         </label>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="formFile" class="form-label">Upload Materi</label>
+                                    <input class="form-control <?= (isset($validation)) ? ($validation->hasError('file')) ? 'is-invalid' : null : null ?>" type="file" id="formFile" name="file" value="<?= $tugas[0]['file'] ?>">
+                                    <div class="invalid-feedback">
+                                        <?= (isset($validation)) ? ($validation->getError('file')) : null ?>
                                     </div>
                                 </div>
                                 <div class="mb-3">

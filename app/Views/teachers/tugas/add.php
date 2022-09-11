@@ -40,25 +40,7 @@ $this->section('content');
 
                     <div class="col-12">
                         <div class="bg-white p-3 rounded">
-                            <form action="" method="post">
-                                <!-- <div class="mb-3">
-                                    <label class="form-label">Pertemuan</label>
-                                    <select class="form-select" aria-label="Default select example" name="class">
-                                        <option selected disabled>Pertemuan</option>
-                                        <option value="10">1</option>
-                                        <option value="11">2</option>
-                                        <option value="12">3</option>
-                                        <option value="12">4</option>
-                                        <option value="12">5</option>
-                                        <option value="12">6</option>
-                                        <option value="12">7</option>
-                                        <option value="12">8</option>
-                                        <option value="12">9</option>
-                                        <option value="12">10</option>
-                                        <option value="12">11</option>
-                                        <option value="12">12</option>
-                                    </select>
-                                </div> -->
+                            <form action="<?= base_url('/teacher/matakuliah/' . $matkul['slug'] . '/add') ?>" method="post" enctype="multipart/form-data">
                                 <div class="mb-3">
                                     <label class="form-label">Nama Materi</label>
                                     <input type="text" class="form-control <?= (isset($validation)) ? ($validation->hasError('name')) ? 'is-invalid' : null : null ?>" name="name" placeholder="Nama Materi" value="<?= set_value('name') ?>" required>
@@ -96,6 +78,13 @@ $this->section('content');
                                         <label class="form-check-label" for="uas" style="cursor: pointer;">
                                             Ujian
                                         </label>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="formFile" class="form-label">Upload Materi</label>
+                                    <input class="form-control <?= (isset($validation)) ? ($validation->hasError('file')) ? 'is-invalid' : null : null ?>" type="file" id="formFile" name="file" value="<?= set_value('file') ?>">
+                                    <div class="invalid-feedback">
+                                        <?= (isset($validation)) ? ($validation->getError('file')) : null ?>
                                     </div>
                                 </div>
                                 <div class="mb-3">

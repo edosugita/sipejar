@@ -59,17 +59,31 @@ class TugasSiswa extends BaseController
                         'required' => 'Keterangan harus di isi',
                     ],
                 ],
+                'file' => [
+                    'rules' => 'max_size[file,2048]',
+                    'errors' => [
+                        'max_size' => 'Ukuran file terlalu besar',
+                    ],
+                ],
             ]);
 
             if (!$validation) {
                 $data['validation'] = $this->validator;
             } else {
+                $fileSampul = $this->request->getFile('file');
+                if ($fileSampul->getError() == 4) {
+                    $namaSampul = null;
+                } else {
+                    $namaSampul = $fileSampul->getRandomName();
+                    $fileSampul->move('assets/content/documents', $namaSampul);
+                }
                 $newData = [
                     'nama_materi' => $this->request->getVar('name'),
                     'deskripsi' => $this->request->getVar('desc'),
                     'absen' => $this->request->getVar('absen'),
                     'pengumpulan' => $this->request->getVar('tugas'),
                     'ujian' => $this->request->getVar('uas'),
+                    'file' => $namaSampul
                 ];
 
                 $query = $this->tugas->update($id, $newData);

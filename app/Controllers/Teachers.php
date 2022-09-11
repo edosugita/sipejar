@@ -97,6 +97,7 @@ class Teachers extends BaseController
         $data = [
             'title' => 'Tambah Tugas',
             'guru' => $this->guru->find($id),
+            'matkul' => $matkul
         ];
 
         if ($this->request->getMethod() == 'post') {
@@ -113,23 +114,33 @@ class Teachers extends BaseController
                         'required' => 'Keterangan harus di isi',
                     ],
                 ],
+                'file' => [
+                    'rules' => 'max_size[file,2048]',
+                    'errors' => [
+                        'max_size' => 'Ukuran file terlalu besar',
+                    ],
+                ],
             ]);
 
             if (!$validation) {
                 $data['validation'] = $this->validator;
             } else {
-                // if ($this->request->getVar('class') == null) {
-                //     session()->setFlashdata('fail', 'Pertemuan harus di isi!');
-                //     return redirect()->back()->withInput();
-                // }
+                $fileSampul = $this->request->getFile('file');
+                if ($fileSampul->getError() == 4) {
+                    $namaSampul = null;
+                } else {
+                    $namaSampul = $fileSampul->getRandomName();
+                    $fileSampul->move('assets/content/documents', $namaSampul);
+                }
+
                 $newData = [
                     'id_matkul' => $matkul['id_matkul'],
-                    // 'pertemuan' => $this->request->getVar('class'),
                     'nama_materi' => $this->request->getVar('name'),
                     'deskripsi' => $this->request->getVar('desc'),
                     'absen' => $this->request->getVar('absen'),
                     'pengumpulan' => $this->request->getVar('tugas'),
                     'ujian' => $this->request->getVar('uas'),
+                    'file' => $namaSampul
                 ];
 
                 // dd($newData);
