@@ -20,7 +20,7 @@ class Presensi extends BaseController
         $this->absen = new ModelAbsenCreate();
     }
 
-    public function index()
+    public function index($slug)
     {
         $id = session()->get('id');
 
@@ -29,8 +29,8 @@ class Presensi extends BaseController
             'guru' => $this->guru->find($id),
             'siswa' => $this->kelas->getKelas($id),
             'siswaCount' => $this->kelas->getCount($id),
-            'absen' => $this->absen->getAbsen($id),
-            'namaAbsen' => $this->absen->getName($id),
+            'absen' => $this->absen->getAbsen($slug),
+            'namaAbsen' => $this->absen->getName($slug),
         ];
 
         return view('teachers/presensi/index', $data);

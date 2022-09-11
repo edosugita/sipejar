@@ -35,7 +35,7 @@ $routes->group('', ['filter' => 'UserFilter'], function ($routes) {
     //     $routes->group('', ['filter' => 'Role2Filter'], function ($routes) {
     $routes->get('/dashboard', 'Users::index');
     $routes->get('/pelajaran/(:segment)', 'Users::matkul/$1');
-    $routes->get('/presensi', 'Users::presensi');
+    $routes->match(['get', 'post'], '/pelajaran/(:num)/presensi/(:segment)', 'Users::presensi/$1');
     $routes->get('/tugas', 'Users::tugas');
     $routes->get('/pengumpulan', 'Users::pengumpulan');
 
@@ -62,7 +62,7 @@ $routes->group('', ['filter' => 'AuthFilter'], function ($routes) {
 
         $routes->match(['get', 'post'], 'matakuliah/(:segment)/add', 'Teachers::AddTugas/$1');
 
-        $routes->match(['get', 'post'], 'matakuliah/(:segment)/presensi/(:num)', 'Presensi::index/$1');
+        $routes->match(['get', 'post'], 'matakuliah/(:num)/presensi/(:segment)', 'Presensi::index/$1');
 
         $routes->get('matakuliah/tugas/(:segment)', 'TugasSiswa::index/$1');
 

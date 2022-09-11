@@ -51,4 +51,14 @@ class ModelAbsenCreate extends Model
         return $this->db->table('absen')
             ->join('siswa', 'absen.id_siswa = siswa.id_siswa')->where(['id_tugas' => $id])->get()->getResultArray();
     }
+
+    public function siswaAbsen($id, $ids)
+    {
+        return $this->db->table('absen')->where(['id_tugas' => $id, 'id_siswa' => $ids])->get()->getResultArray();
+    }
+
+    public function countAll($id, $ids)
+    {
+        return $this->db->table('absen')->where(['id_tugas' => $id, 'id_siswa' => $ids])->countAllResults();
+    }
 }

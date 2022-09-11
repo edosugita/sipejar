@@ -59,7 +59,7 @@ $this->section('content');
                                     </div>
                                     <?php if ($data['absen'] !== null) : ?>
                                         <div class="col-10">
-                                            <a style="text-decoration: none;" href="<?= base_url('/teacher/matakuliah/' . $matkul['slug'] . '/presensi/' . $a++) ?>" class="matkul-attendance">
+                                            <a style="text-decoration: none;" href="<?= base_url('/teacher/matakuliah/' . $data['id_tugas'] . '/presensi/' . $matkul['slug']) ?>" class="matkul-attendance">
                                                 <i class="fas fa-user-friends"></i>
                                                 Attendance
                                             </a>
