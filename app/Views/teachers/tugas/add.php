@@ -74,10 +74,17 @@ $this->section('content');
                                 </div>
                                 <div class="mb-3">
                                     <div class="form-check">
-                                        <input class="form-check-input" style="cursor: pointer;" type="checkbox" value="1" name="uas" id="uas">
+                                        <input class="form-check-input" style="cursor: pointer;" type="checkbox" value="1" name="uas" id="uas" onclick="ujianButton()">
                                         <label class="form-check-label" for="uas" style="cursor: pointer;">
                                             Ujian
                                         </label>
+                                    </div>
+                                </div>
+                                <div class="mb-3 d-none" id="linkUjian">
+                                    <label class="form-label">Link Ujian</label>
+                                    <input type="text" class="form-control <?= (isset($validation)) ? ($validation->hasError('link')) ? 'is-invalid' : null : null ?>" name="link" placeholder="ex: https://....." value="<?= set_value('link') ?>" required>
+                                    <div class="invalid-feedback">
+                                        <?= (isset($validation)) ? ($validation->getError('link')) : null ?>
                                     </div>
                                 </div>
                                 <div class="mb-3">
@@ -87,6 +94,8 @@ $this->section('content');
                                         <?= (isset($validation)) ? ($validation->getError('file')) : null ?>
                                     </div>
                                 </div>
+
+
                                 <div class="mb-3">
                                     <div class="row">
                                         <div class="col-12 d-flex justify-content-end">
@@ -104,5 +113,23 @@ $this->section('content');
         </div>
     </div>
 </main>
+
+<?= $this->endSection(); ?>
+
+<?= $this->section('js'); ?>
+
+<script>
+    function ujianButton() {
+        const check = document.getElementById("uas").checked;
+        const inputLink = document.getElementById("linkUjian");
+        if (check == true) {
+            inputLink.classList.add('d-block');
+            inputLink.classList.remove('d-none');
+        } else {
+            inputLink.classList.add('d-none');
+            inputLink.classList.remove('d-block');
+        }
+    }
+</script>
 
 <?= $this->endSection(); ?>

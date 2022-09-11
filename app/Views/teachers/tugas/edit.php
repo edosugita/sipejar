@@ -81,6 +81,13 @@ $this->section('content');
                                         </label>
                                     </div>
                                 </div>
+                                <div class="mb-3" id="linkUjian">
+                                    <label class="form-label">Link Ujian</label>
+                                    <input type="text" class="form-control <?= (isset($validation)) ? ($validation->hasError('link')) ? 'is-invalid' : null : null ?>" name="link" placeholder="ex: https://....." value="<?= $tugas[0]['link'] ?>" required>
+                                    <div class="invalid-feedback">
+                                        <?= (isset($validation)) ? ($validation->getError('link')) : null ?>
+                                    </div>
+                                </div>
                                 <div class="mb-3">
                                     <label for="formFile" class="form-label">Upload Materi</label>
                                     <input class="form-control <?= (isset($validation)) ? ($validation->hasError('file')) ? 'is-invalid' : null : null ?>" type="file" id="formFile" name="file" value="<?= $tugas[0]['file'] ?>">
@@ -106,5 +113,23 @@ $this->section('content');
         </div>
     </div>
 </main>
+
+<?= $this->endSection(); ?>
+
+<?= $this->section('js'); ?>
+
+<script>
+    function ujianButton() {
+        const check = document.getElementById("uas").checked;
+        const inputLink = document.getElementById("linkUjian");
+        if (check == true) {
+            inputLink.classList.add('d-block');
+            inputLink.classList.remove('d-none');
+        } else {
+            inputLink.classList.add('d-none');
+            inputLink.classList.remove('d-block');
+        }
+    }
+</script>
 
 <?= $this->endSection(); ?>
