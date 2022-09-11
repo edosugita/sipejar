@@ -2,7 +2,10 @@
 
 namespace App\Controllers;
 
+use App\Models\KelasModel;
 use App\Models\Matkul_Model;
+use App\Models\MatkulModel;
+use App\Models\TugasModel;
 
 class Users extends BaseController
 {
@@ -10,22 +13,27 @@ class Users extends BaseController
 
     public function __construct()
     {
-        // $this->getMatkul = new Matkul_Model();
+        $this->getKelas = new KelasModel();
+        $this->getMatkul = new MatkulModel();
+        $this->getTugas = new TugasModel();
     }
 
     public function index()
     {
         $data = [
             'title' => 'Dashboard',
+            'kelas' => $this->getKelas->getInfoKelas(session()->get('id')),
         ];
         return view('users/dashboard', $data);
     }
 
     public function matkul($slug)
     {
+        $matkul = $this->getMatkul->getMatkul($slug);
         $data = [
             'title' => 'Matkul',
-            // 'matkul' => $this->getMatkul->getMatkul($slug),
+            'tugas' => $this->getTugas->getMatkul($slug),
+            'matkul' => $matkul,
         ];
         return view('users/matkul', $data);
     }

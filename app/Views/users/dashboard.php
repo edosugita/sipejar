@@ -8,10 +8,8 @@ $this->section('content');
         <div class="row">
             <?= $this->include('templates/users/breadcrumb'); ?>
 
-            <?= $this->include('templates/users/navigation'); ?>
-
             <!-- CONTENT -->
-            <div class="col-md-6 col-7">
+            <div class="col-md-9 col-12">
                 <div class="row">
 
                     <div class="col-12">
@@ -20,101 +18,20 @@ $this->section('content');
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                        <div class="card">
-                            <div class="matkul-img"></div>
-                            <div class="card-body">
-                                <h5 class="card-title">S1 Teknik Informatika</h5>
-                                <a href="<?= base_url() ?>/matakuliah" class="card-text">Aljabar Linier</a>
-                                <div class="progress-matkul mb-3">
-                                    <label class="label">Progress</label>
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                    <?php foreach ($kelas as $data) : ?>
+                        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                            <a style="text-decoration: none;" href="<?= base_url('pelajaran/' . $data['slug']) ?>">
+                                <div class="card">
+                                    <div class="matkul-img"></div>
+                                    <div class="card-body">
+                                        <h5 class="card-title" style="text-transform: uppercase;"><?= $data['jurusan'] ?></h5>
+                                        <p class="card-text"><?= $data['nama_matkul'] ?></p>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
-                    </div>
+                    <?php endforeach; ?>
 
-                    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                        <div class="card">
-                            <div class="matkul-img"></div>
-                            <div class="card-body">
-                                <h5 class="card-title">S1 Teknik Informatika</h5>
-                                <a class="card-text">Analisis dan Desain Algoritma</a>
-                                <div class="progress-matkul mb-3">
-                                    <label class="label">Progress</label>
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">50%</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                        <div class="card">
-                            <div class="matkul-img"></div>
-                            <div class="card-body">
-                                <h5 class="card-title">S1 Teknik Informatika</h5>
-                                <a class="card-text">Algoritma dan Pemrograman</a>
-                                <div class="progress-matkul mb-3">
-                                    <label class="label">Progress</label>
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">75%</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                        <div class="card">
-                            <div class="matkul-img"></div>
-                            <div class="card-body">
-                                <h5 class="card-title">S1 Teknik Informatika</h5>
-                                <a class="card-text">Interaksi Manusia dan Komputer</a>
-                                <div class="progress-matkul mb-3">
-                                    <label class="label">Progress</label>
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">100%</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                        <div class="card">
-                            <div class="matkul-img"></div>
-                            <div class="card-body">
-                                <h5 class="card-title">S1 Teknik Informatika</h5>
-                                <a class="card-text">Algoritma dan Pemrograman</a>
-                                <div class="progress-matkul mb-3">
-                                    <label class="label">Progress</label>
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">75%</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                        <div class="card">
-                            <div class="matkul-img"></div>
-                            <div class="card-body">
-                                <h5 class="card-title">S1 Teknik Informatika</h5>
-                                <a class="card-text">Interaksi Manusia dan Komputer</a>
-                                <div class="progress-matkul mb-3">
-                                    <label class="label">Progress</label>
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">100%</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
             <!-- RIGHT BAR -->
@@ -146,7 +63,7 @@ $this->section('content');
                     <div class="days"></div>
                 </div>
 
-                <div class="online-users">
+                <!-- <div class="online-users">
 
                     <div class="nama-nav">
                         <h6>online users</h6>
@@ -210,7 +127,7 @@ $this->section('content');
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
