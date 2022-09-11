@@ -91,7 +91,7 @@ $this->section('content');
                                         <div class="col-12">
                                             <div class="row">
                                                 <div class="col-auto">
-                                                    <a href="<?= $data['link'] ?>" class="matkul-form">
+                                                    <a href="<?= $data['link'] ?>" class="matkul-form" target="_blank">
                                                         <i class="fas fa-file-alt"></i>
                                                         <?= $data['link'] ?>
                                                     </a>

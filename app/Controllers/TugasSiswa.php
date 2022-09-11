@@ -78,12 +78,13 @@ class TugasSiswa extends BaseController
                     $fileSampul->move('assets/content/documents', $namaSampul);
                 }
 
-                if ($this->request->getVar('ujian') == null) {
+                if ($this->request->getVar('uas') == null) {
                     $link = null;
                 } else {
                     $link = $this->request->getVar('link');
                 }
 
+                // dd($link);
                 $newData = [
                     'nama_materi' => $this->request->getVar('name'),
                     'deskripsi' => $this->request->getVar('desc'),
@@ -93,6 +94,8 @@ class TugasSiswa extends BaseController
                     'link' => $link,
                     'file' => $namaSampul
                 ];
+
+                // dd($newData);
 
                 $query = $this->tugas->update($id, $newData);
 

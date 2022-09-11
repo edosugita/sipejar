@@ -49,4 +49,9 @@ class KelasModel extends Model
     {
         return $this->db->table('kelas')->selectCount('id_kelas')->where(['id_matkul' => $id])->get()->getResultArray();
     }
+
+    public function getInfoKelas($id)
+    {
+        return $this->db->table('kelas')->join('matkul', 'kelas.id_matkul = matkul.id_matkul')->where(['id_siswa' => $id])->get()->getResultArray();
+    }
 }
