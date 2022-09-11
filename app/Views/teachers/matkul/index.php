@@ -36,6 +36,22 @@ $this->section('content');
                                             <h5>Pertemuan <?= $i++ ?>: <?= $data['nama_materi'] ?></h5>
                                         </div>
                                     </div>
+                                    <?php if ($data['file'] !== null) : ?>
+                                        <div class="mb-3 mt-3 col-12">
+                                            <div class="row">
+                                                <div class="col-auto">
+                                                    <a style="text-decoration: none;" href="<?= base_url('/assets/content/documents/' . $data['file']) ?>" download="">
+                                                        <div class="files d-flex justify-content-start">
+                                                            <div class="img me-3" style="width: 20px;">
+                                                                <img style="width: 100%;" src="<?= base_url('assets/image/file.png') ?>" alt="">
+                                                            </div>
+                                                            <?= $data['file'] ?>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php endif;  ?>
                                     <div class="col-12">
                                         <div class="matkul-information">
                                             <p><?= $data['deskripsi'] ?></p>
