@@ -57,11 +57,10 @@ $this->section('content');
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Departemen</label>
-                            <select class="form-select" aria-label="Default select example" name="departement">
-                                <option value="ipa">IPA</option>
-                                <option value="ips">IPS</option>
-                                <option value="bahasa">Bahasa</option>
-                            </select>
+                            <input type="text" class="form-control <?= (isset($validation)) ? ($validation->hasError('departement')) ? 'is-invalid' : null : null ?>" name="departement" placeholder="ex: TKJ" value="<?= set_value('departement') ?>" required>
+                            <div class="invalid-feedback">
+                                <?= (isset($validation)) ? ($validation->getError('departement')) : null ?>
+                            </div>
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Offering</label>
