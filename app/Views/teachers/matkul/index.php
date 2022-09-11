@@ -89,7 +89,7 @@ $this->section('content');
                                     <div class="col-12 mt-2">
                                         <div class="d-flex">
                                             <div class="ms-auto">
-                                                <a href="<?= base_url('/teacher/matakuliah/matematika/edit/tugas/' . $data['id_tugas']) ?>" class="btn btn-warning">Edit</a>
+                                                <a href="<?= base_url('/teacher/matakuliah/' . $matkul['slug'] . '/edit/tugas/' . $data['id_tugas']) ?>" class="btn btn-warning">Edit</a>
                                             </div>
                                         </div>
                                     </div>
