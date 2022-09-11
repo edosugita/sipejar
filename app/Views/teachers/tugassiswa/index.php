@@ -11,8 +11,8 @@ $this->section('content');
             <div class="col-md-12">
                 <div class="row">
 
-                    <div class="col-12">pengumpulan as $data
-                        : <div class="nama-matkul">
+                    <div class="col-12">
+                        <div class="nama-matkul">
                             <h6>pengumpulan tugas <?= $matkul['nama_matkul'] ?></h6>
                         </div>
                     </div>

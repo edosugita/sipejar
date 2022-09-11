@@ -40,18 +40,18 @@ $this->section('content');
 
                     <div class="col-12">
                         <div class="bg-white p-3 rounded">
-                            <form action="<?= base_url('/teacher/matakuliah/matematika/edit/tugas/' . $tugas['id_tugas']) ?>" method="post">
+                            <form action="<?= base_url('/teacher/matakuliah/' . $tugas[0]['id_tugas'] . '/edit/tugas/' . $tugas[0]['slug']) ?>" method="post">
                                 <?= csrf_field() ?>
                                 <div class="mb-3">
                                     <label class="form-label">Nama Materi</label>
-                                    <input type="text" class="form-control <?= (isset($validation)) ? ($validation->hasError('name')) ? 'is-invalid' : null : null ?>" name="name" placeholder="Nama Materi" value="<?= $tugas['nama_materi'] ?>" required>
+                                    <input type="text" class="form-control <?= (isset($validation)) ? ($validation->hasError('name')) ? 'is-invalid' : null : null ?>" name="name" placeholder="Nama Materi" value="<?= $tugas[0]['nama_materi'] ?>" required>
                                     <div class="invalid-feedback">
                                         <?= (isset($validation)) ? ($validation->getError('name')) : null ?>
                                     </div>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Deskripsi Materi</label>
-                                    <textarea class="form-control <?= (isset($validation)) ? ($validation->hasError('desc')) ? 'is-invalid' : null : null ?>" name="desc" rows="3" required><?= $tugas['deskripsi'] ?></textarea>
+                                    <textarea class="form-control <?= (isset($validation)) ? ($validation->hasError('desc')) ? 'is-invalid' : null : null ?>" name="desc" rows="3" required><?= $tugas[0]['deskripsi'] ?></textarea>
                                     <div class="invalid-feedback">
                                         <?= (isset($validation)) ? ($validation->getError('desc')) : null ?>
                                     </div>
@@ -59,7 +59,7 @@ $this->section('content');
 
                                 <div class="mb-3">
                                     <div class="form-check">
-                                        <input class="form-check-input" style="cursor: pointer;" type="checkbox" value="1" name="absen" id="absen" <?= $tugas['absen'] == null ? null : 'checked' ?>>
+                                        <input class="form-check-input" style="cursor: pointer;" type="checkbox" value="1" name="absen" id="absen" <?= $tugas[0]['absen'] == null ? null : 'checked' ?>>
                                         <label class="form-check-label" for="absen" style="cursor: pointer;">
                                             Absen
                                         </label>
@@ -67,7 +67,7 @@ $this->section('content');
                                 </div>
                                 <div class="mb-3">
                                     <div class="form-check">
-                                        <input class="form-check-input" style="cursor: pointer;" type="checkbox" value="1" name="tugas" id="tugas" <?= $tugas['pengumpulan'] == null ? null : 'checked' ?>>
+                                        <input class="form-check-input" style="cursor: pointer;" type="checkbox" value="1" name="tugas" id="tugas" <?= $tugas[0]['pengumpulan'] == null ? null : 'checked' ?>>
                                         <label class="form-check-label" for="tugas" style="cursor: pointer;">
                                             Pengumpulan Tugas
                                         </label>
@@ -75,7 +75,7 @@ $this->section('content');
                                 </div>
                                 <div class="mb-3">
                                     <div class="form-check">
-                                        <input class="form-check-input" style="cursor: pointer;" type="checkbox" value="1" name="uas" id="uas" <?= $tugas['ujian'] == null ? null : 'checked' ?>>
+                                        <input class="form-check-input" style="cursor: pointer;" type="checkbox" value="1" name="uas" id="uas" <?= $tugas[0]['ujian'] == null ? null : 'checked' ?>>
                                         <label class="form-check-label" for="uas" style="cursor: pointer;">
                                             Ujian
                                         </label>

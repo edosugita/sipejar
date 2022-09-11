@@ -170,7 +170,7 @@ class Teachers extends BaseController
             'title' => 'Kelas ' . $matkul['kelas'] . ' | ' . ucwords($matkul['nama_matkul']),
             'guru' => $this->guru->find($id),
             'matkul' => $matkul,
-            'tugas' => $this->tugasModel->findAll(),
+            'tugas' => $this->tugasModel->getMatkul($slug),
         ];
 
         return view('teachers/matkul/index', $data);
