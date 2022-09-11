@@ -88,16 +88,13 @@ $this->section('content');
                                         </div>
                                     <?php endif;  ?>
                                     <?php if ($data['ujian'] !== null) : ?>
-                                        <div class="col-10">
-                                            <div class="matkul-form" onclick="location.href='<?= base_url() ?>/teacher/ulangan/<?= $matkul['slug'] ?>'">
-                                                <i class="fas fa-file-alt"></i>
-                                                Ujian
-                                            </div>
-                                        </div>
-                                        <div class="col-2">
-                                            <div class="matkul-check-list d-flex">
-                                                <div class="form-check ms-auto">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-auto">
+                                                    <a href="<?= $data['link'] ?>" class="matkul-form">
+                                                        <i class="fas fa-file-alt"></i>
+                                                        <?= $data['link'] ?>
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>

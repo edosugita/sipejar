@@ -140,6 +140,7 @@ class Teachers extends BaseController
                     'absen' => $this->request->getVar('absen'),
                     'pengumpulan' => $this->request->getVar('tugas'),
                     'ujian' => $this->request->getVar('uas'),
+                    'link' => $this->request->getVar('link'),
                     'file' => $namaSampul
                 ];
 

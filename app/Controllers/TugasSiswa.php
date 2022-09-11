@@ -77,12 +77,20 @@ class TugasSiswa extends BaseController
                     $namaSampul = $fileSampul->getRandomName();
                     $fileSampul->move('assets/content/documents', $namaSampul);
                 }
+
+                if ($this->request->getVar('ujian') == null) {
+                    $link = null;
+                } else {
+                    $link = $this->request->getVar('link');
+                }
+
                 $newData = [
                     'nama_materi' => $this->request->getVar('name'),
                     'deskripsi' => $this->request->getVar('desc'),
                     'absen' => $this->request->getVar('absen'),
                     'pengumpulan' => $this->request->getVar('tugas'),
                     'ujian' => $this->request->getVar('uas'),
+                    'link' => $link,
                     'file' => $namaSampul
                 ];
 
