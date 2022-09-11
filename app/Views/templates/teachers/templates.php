@@ -19,7 +19,7 @@
 
     <body class="bg-white">
         <!-- HEADER -->
-        <?= $this->include('templates/users/header') ?>
+        <?= $this->include('templates/teachers/header') ?>
         <!-- END HEADER -->
 
         <!-- MAIN -->
@@ -27,7 +27,7 @@
         <!-- END MAIN -->
 
         <!-- FOOTER -->
-        <?= $this->include('templates/users/footer'); ?>
+        <?= $this->include('templates/teachers/footer'); ?>
         <!-- END FOOTER -->
 
         <!-- JS -->
@@ -39,7 +39,7 @@
 
     <body style="background-image: url('<?= base_url('assets/content/images/' . $guru['bg_image']) ?>'); background-size: cover; background-repeat:no-repeat">
         <!-- HEADER -->
-        <?= $this->include('templates/users/header') ?>
+        <?= $this->include('templates/teachers/header') ?>
         <!-- END HEADER -->
 
         <!-- MAIN -->
@@ -47,7 +47,7 @@
         <!-- END MAIN -->
 
         <!-- FOOTER -->
-        <?= $this->include('templates/users/footer'); ?>
+        <?= $this->include('templates/teachers/footer'); ?>
         <!-- END FOOTER -->
 
         <!-- JS -->

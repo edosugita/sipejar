@@ -1,5 +1,5 @@
 <?=
-$this->extend('templates/users/templates');
+$this->extend('templates/teachers/templates');
 $this->section('content');
 ?>
 

@@ -55,7 +55,7 @@ $routes->group('', ['filter' => 'AuthFilter'], function ($routes) {
 
         $routes->match(['get', 'post'], 'matakuliah/(:segment)/presensi/(:num)', 'Presensi::index/$1');
 
-        $routes->get('tugas/(:segment)', 'Teachers::TugasInfo/$1');
+        $routes->get('matakuliah/tugas/(:segment)', 'TugasSiswa::index/$1');
 
         // SETTING
         $routes->match(['get', 'post'], 'setting', 'Setting::index');
