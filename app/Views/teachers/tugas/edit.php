@@ -83,7 +83,7 @@ $this->section('content');
                                 </div>
                                 <div class="mb-3" id="linkUjian">
                                     <label class="form-label">Link Ujian</label>
-                                    <input type="text" class="form-control <?= (isset($validation)) ? ($validation->hasError('link')) ? 'is-invalid' : null : null ?>" name="link" placeholder="ex: https://....." value="<?= $tugas[0]['link'] ?>" required>
+                                    <input type="text" class="form-control <?= (isset($validation)) ? ($validation->hasError('link')) ? 'is-invalid' : null : null ?>" name="link" placeholder="ex: https://....." value="<?= $tugas[0]['link'] ?>">
                                     <div class="invalid-feedback">
                                         <?= (isset($validation)) ? ($validation->getError('link')) : null ?>
                                     </div>
