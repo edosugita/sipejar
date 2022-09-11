@@ -24,7 +24,7 @@
             <?php endif; ?>
             <!-- ALERT STOP -->
             <div class="login-form">
-                <form method="post">
+                <form action="<?= base_url('/teacher/login') ?>" method="post">
                     <h5 class="h5-login">Login Teacher</h5>
                     <?= csrf_field() ?>
                     <div class="mb-3">

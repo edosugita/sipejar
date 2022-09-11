@@ -79,6 +79,7 @@ class TeachersAuth extends BaseController
             'picture' => $admin['picture'],
             'bg_color' => $admin['bg_color'],
             'bg_image' => $admin['bg_image'],
+            'role' => 'guru'
         ];
 
         session()->set($data);
@@ -88,7 +89,7 @@ class TeachersAuth extends BaseController
     public function logout()
     {
         if (session()->has('loggedUser')) {
-            session()->remove(['loggedUser', 'id', 'email']);
+            session()->remove(['loggedUser', 'loggedsiswa', 'id', 'email', 'name', 'picture', 'role', 'bg_color', 'bg_image']);
             return redirect()->to('/teacher/login?access=out')->with('fail', 'Kamu berhasil keluar');
         }
     }

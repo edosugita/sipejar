@@ -6,6 +6,24 @@ $this->section('content');
 <main class="mt-3">
     <div class="container">
         <div class="row">
+            <!-- ALERT START -->
+            <?php if (!empty(session()->getFlashdata('fail'))) : ?>
+                <div class="col-12">
+                    <div class="alert alert-danger alert-dismissible fade show">
+                        <?= session()->getFlashdata('fail'); ?>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                </div>
+            <?php endif; ?>
+            <?php if (!empty(session()->getFlashdata('success'))) : ?>
+                <div class="col-12">
+                    <div class="alert alert-success alert-dismissible fade show">
+                        <?= session()->getFlashdata('success'); ?>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                </div>
+            <?php endif; ?>
+            <!-- ALERT END -->
             <?= $this->include('templates/users/breadcrumb'); ?>
 
             <!-- CONTENT -->
