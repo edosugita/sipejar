@@ -39,4 +39,9 @@ class TugasModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function getMatkul($slug)
+    {
+        return $this->table('tugas')->join('matkul', 'tugas.id_matkul = matkul.id_matkul')->where(['slug' => $slug])->get()->getResultArray();
+    }
 }
