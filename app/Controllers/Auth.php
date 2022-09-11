@@ -60,7 +60,7 @@ class Auth extends BaseController
                         return redirect()->to('/login')->withInput();
                     } else {
                         $admin_id = $admin_info['id_siswa'];
-                        session()->set('loggedUser', $admin_id);
+                        session()->set('loggedSiswa', $admin_id);
                         return $this->data($admin_info);
                     }
                 }
@@ -77,6 +77,7 @@ class Auth extends BaseController
             'name' => $admin['nama_siswa'],
             'email' => $admin['email'],
             'picture' => $admin['picture'],
+            'role' => 'siswa'
         ];
 
         session()->set($data);
@@ -86,7 +87,7 @@ class Auth extends BaseController
     public function logout()
     {
         if (session()->has('loggedUser')) {
-            session()->remove(['loggedUser', 'id', 'email']);
+            session()->remove(['loggedUser', 'loggedsiswa', 'id', 'email', 'name', 'picture', 'role', 'bg_color', 'bg_image']);
             return redirect()->to('/login?access=out')->with('fail', 'Kamu berhasil keluar');
         }
     }

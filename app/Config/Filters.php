@@ -4,6 +4,11 @@ namespace Config;
 
 use App\Filters\AuthFilter;
 use App\Filters\NoAuthFilter;
+use App\Filters\Role2Filter;
+use App\Filters\RoleFilter;
+use App\Filters\UnoFilter;
+use App\Filters\UrlFilter;
+use App\Filters\UserFilter;
 use CodeIgniter\Config\BaseConfig;
 use CodeIgniter\Filters\CSRF;
 use CodeIgniter\Filters\DebugToolbar;
@@ -27,6 +32,11 @@ class Filters extends BaseConfig
         'secureheaders' => SecureHeaders::class,
         'AuthFilter'    => AuthFilter::class,
         'NoAuthFilter'  => NoAuthFilter::class,
+        'RoleFilter'    => RoleFilter::class,
+        'Role2Filter'   => Role2Filter::class,
+        'UserFilter'    => UserFilter::class,
+        'UnoFilter'     => UnoFilter::class,
+        'UrlFilter'     => UrlFilter::class,
     ];
 
     /**

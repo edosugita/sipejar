@@ -31,25 +31,31 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Users::index');
-$routes->get('/pelajaran/(:segment)', 'Users::matkul/$1');
-$routes->get('/presensi', 'Users::presensi');
-$routes->get('/tugas', 'Users::tugas');
-$routes->get('/pengumpulan', 'Users::pengumpulan');
+$routes->group('', ['filter' => 'UserFilter'], function ($routes) {
+    //     $routes->group('', ['filter' => 'Role2Filter'], function ($routes) {
+    $routes->get('/dashboard', 'Users::index');
+    $routes->get('/pelajaran/(:segment)', 'Users::matkul/$1');
+    $routes->get('/presensi', 'Users::presensi');
+    $routes->get('/tugas', 'Users::tugas');
+    $routes->get('/pengumpulan', 'Users::pengumpulan');
+
+    $routes->match(['get', 'post'], '/user/logout', 'Auth::logout');
+    //     });
+});
 
 $routes->match(['get', 'post'], '/login', 'Auth::index');
 $routes->get('/register', 'Auth::register');
 
 // TEACHER
 
-$routes->match(['get', 'post'], '/teacher/login', 'TeachersAuth::index', ['filter' => 'NoAuthFilter']);
+$routes->match(['get', 'post'], '/teacher/login', 'TeachersAuth::index');
 
 $routes->group('', ['filter' => 'AuthFilter'], function ($routes) {
-
-    // LOGOUT
     $routes->match(['get', 'post'], '/logout', 'TeachersAuth::logout');
 
-    $routes->group('teacher', function ($routes) {
+    // LOGOUT
+
+    $routes->group('teacher', ['filter' => 'RoleFilter'], function ($routes) {
         $routes->get('/', 'Teachers::index');
         $routes->match(['get', 'post'], 'add/matkul', 'Teachers::add');
         $routes->get('matakuliah/(:segment)', 'Teachers::MatkulInfo/$1');
@@ -66,6 +72,9 @@ $routes->group('', ['filter' => 'AuthFilter'], function ($routes) {
         $routes->match(['get', 'post'], 'setting', 'Setting::index');
     });
 });
+
+
+$routes->get('/', 'AdminDashboard::index', ['filter' => 'UrlFilter']);
 
 /*
  * --------------------------------------------------------------------
