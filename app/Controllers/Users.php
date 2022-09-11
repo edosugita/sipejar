@@ -10,7 +10,7 @@ class Users extends BaseController
 
     public function __construct()
     {
-        $this->getMatkul = new Matkul_Model();
+        // $this->getMatkul = new Matkul_Model();
     }
 
     public function index()
@@ -25,7 +25,7 @@ class Users extends BaseController
     {
         $data = [
             'title' => 'Matkul',
-            'matkul' => $this->getMatkul->getMatkul($slug),
+            // 'matkul' => $this->getMatkul->getMatkul($slug),
         ];
         return view('users/matkul', $data);
     }

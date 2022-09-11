@@ -37,6 +37,9 @@ $routes->get('/presensi', 'Users::presensi');
 $routes->get('/tugas', 'Users::tugas');
 $routes->get('/pengumpulan', 'Users::pengumpulan');
 
+$routes->get('/login', 'Auth::login');
+$routes->get('/register', 'Auth::register');
+
 // TEACHER
 
 $routes->match(['get', 'post'], '/teacher/login', 'TeachersAuth::index', ['filter' => 'NoAuthFilter']);

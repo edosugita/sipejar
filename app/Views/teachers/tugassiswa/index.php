@@ -39,7 +39,7 @@ $this->section('content');
                                             <th><?= $i++ ?></th>
                                             <td><?= $data['nama_siswa'] ?></td>
                                             <td class="text-center">1</td>
-                                            <td class="text-center"><a href="#" class="btn btn-primary">Download</a></td>
+                                            <td class="text-center"><a href="<?= base_url('assets/content/documents/' . $data['tugas']) ?>" class="btn btn-primary" download="">Download</a></td>
                                         </tr>
                                     <?php endforeach; ?>
                             </table>
