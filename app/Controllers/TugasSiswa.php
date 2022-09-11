@@ -38,11 +38,11 @@ class TugasSiswa extends BaseController
     public function edit($id)
     {
         $ids = session()->get('id');
-
+        // dd($id);
         $data = [
             'title' => 'Teacher | Pengumpulan Tugas',
             'guru' => $this->guru->find($ids),
-            'tugas' => $this->tugas->find($id),
+            'tugas' => $this->tugas->getMatkull($id),
         ];
 
         if ($this->request->getMethod() == 'post') {

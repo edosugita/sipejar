@@ -42,6 +42,11 @@ class TugasModel extends Model
 
     public function getMatkul($slug)
     {
-        return $this->table('tugas')->join('matkul', 'tugas.id_matkul = matkul.id_matkul')->where(['slug' => $slug])->get()->getResultArray();
+        return $this->db->table('tugas')->join('matkul', 'tugas.id_matkul = matkul.id_matkul')->where(['slug' => $slug])->get()->getResultArray();
+    }
+
+    public function getMatkull($id)
+    {
+        return $this->db->table('tugas')->join('matkul', 'tugas.id_matkul = matkul.id_matkul')->where(['tugas.id_tugas' => $id])->get()->getResultArray();
     }
 }
