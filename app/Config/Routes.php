@@ -43,6 +43,7 @@ $routes->group('', ['filter' => 'UserFilter'], function ($routes) {
     $routes->get('/pengumpulan', 'Users::pengumpulan');
 
     $routes->match(['get', 'post'], '/user/logout', 'Auth::logout');
+    $routes->match(['get', 'post'], '/perpustakaan', 'Perpus::index');
     //     });
 });
 
