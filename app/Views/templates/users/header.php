@@ -9,6 +9,9 @@
                 <ul class="navbar-nav ms-auto">
                     <?php if (session()->get('loggedSiswa') == 1) : ?>
                         <li class="nav-item">
+                            <a href="<?= base_url('/perpustakaan') ?>" class="nav-link nav-name">Perpus</a>
+                        </li>
+                        <li class="nav-item">
                             <a href="" class="nav-link nav-name disabled"><?= session()->get('name') ?></a>
                         </li>
                         <li class="nav-item dropdown">
