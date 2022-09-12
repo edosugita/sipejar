@@ -24,11 +24,11 @@ $this->section('content');
                                     <span>File Submissions:</span>
                                 </div>
                                 <div class="col-9">
-                                    <form action="<?= base_url('pelajaran/tugas/' . $tugas[0]['id_tugas'] . '/' . $tugas[0]['nama_matkul'] . '/add') ?>" method="post" enctype="multipart/form-data">
+                                    <form action="<?= base_url('pelajaran/tugas/' . $tugas[0]['id_tugas'] . '/' . $tugas[0]['nama_matkul'] . '/edit') ?>" method="post" enctype="multipart/form-data">
                                         <p class="text-end">Maximum file size: 2MB</p>
                                         <div class="wrapper">
                                             <div class="form">
-                                                <input class="file-input" type="file" name="file">
+                                                <input class="file-input" type="file" name="file" value="<?= $submission[0]['tugas'] ?>">
                                                 <i class="fas fa-cloud-upload-alt"></i>
                                                 <p>Browse File to Upload</p>
                                             </div>

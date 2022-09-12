@@ -432,7 +432,7 @@
   text-align: center;
 }
 
-.wrapper form {
+.form {
   height: 167px;
   display: flex;
   cursor: pointer;

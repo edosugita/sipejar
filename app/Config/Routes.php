@@ -36,7 +36,10 @@ $routes->group('', ['filter' => 'UserFilter'], function ($routes) {
     $routes->get('/dashboard', 'Users::index');
     $routes->get('/pelajaran/(:segment)', 'Users::matkul/$1');
     $routes->match(['get', 'post'], '/pelajaran/(:num)/presensi/(:segment)', 'Users::presensi/$1');
-    $routes->get('/tugas', 'Users::tugas');
+    $routes->match(['get', 'post'], '/pelajaran/tugas/(:num)/(:segment)', 'Users::tugas/$1');
+    $routes->match(['get', 'post'], '/pelajaran/tugas/(:num)/(:segment)/add', 'Users::pengumpulan/$1');
+    $routes->match(['get', 'post'], '/pelajaran/tugas/(:num)/(:segment)/remove', 'Users::remove/$1');
+    $routes->match(['get', 'post'], '/pelajaran/tugas/(:num)/(:segment)/edit', 'Users::edit/$1');
     $routes->get('/pengumpulan', 'Users::pengumpulan');
 
     $routes->match(['get', 'post'], '/user/logout', 'Auth::logout');
