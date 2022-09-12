@@ -45,4 +45,15 @@ class PenumpulanModel extends Model
         return $this->db->table('pengumpulan')
             ->join('siswa', 'pengumpulan.id_siswa = siswa.id_siswa')->where(['id_tugas' => $id])->get()->getResultArray();
     }
+
+    public function countAll($id, $ids)
+    {
+        return $this->db->table('pengumpulan')->where(['id_tugas' => $id, 'id_siswa' => $ids])->countAllResults();
+    }
+
+    public function getFIle($id, $ids)
+    {
+        return $this->db->table('pengumpulan')
+            ->join('siswa', 'pengumpulan.id_siswa = siswa.id_siswa')->where(['id_tugas' => $id, 'siswa.id_siswa' => $ids])->get()->getResultArray();
+    }
 }

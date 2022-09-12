@@ -17,7 +17,6 @@
                             </div>
 
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="<?= base_url('setting') ?>">Setting</a></li>
                                 <li><a class="dropdown-item" href="<?= base_url('/logout') ?>">Logout</a></li>
                             </ul>
                         </li>

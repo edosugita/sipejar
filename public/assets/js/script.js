@@ -10,7 +10,7 @@ for (let i = 0; i < list.length; i++) {
     }
 }
 
-const form = document.querySelector("form"),
+const form = document.querySelector(".form"),
 fileInput = document.querySelector(".file-input"),
 progressArea = document.querySelector(".progress-area"),
 uploadedArea = document.querySelector(".uploaded-area");
