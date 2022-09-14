@@ -72,6 +72,8 @@ $routes->group('', ['filter' => 'AuthFilter'], function ($routes) {
 
         $routes->match(['get', 'post'], 'matakuliah/(:num)/edit/tugas/(:segment)', 'TugasSiswa::edit/$1');
 
+        $routes->match(['get', 'post'], 'perpus', 'Perpus::teacher');
+        $routes->match(['get', 'post'], 'perpus/add', 'Perpus::add');
         // SETTING
         $routes->match(['get', 'post'], 'setting', 'Setting::index');
     });

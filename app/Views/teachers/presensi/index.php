@@ -73,7 +73,7 @@ $this->section('content');
                                             <?php elseif ($data['status'] == 2) : ?>
                                                 <td>Hadir</td>
                                             <?php endif; ?>
-                                            <td><?= $data['created_at'] ?></td>
+                                            <td><?= $data['create'] ?></td>
                                         </tr>
                                     <?php endforeach; ?>
                                 </tbody>

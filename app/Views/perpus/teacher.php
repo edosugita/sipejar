@@ -1,5 +1,5 @@
 <?=
-$this->extend('templates/users/templates');
+$this->extend('templates/teachers/templates');
 $this->section('content');
 ?>
 
@@ -33,6 +33,10 @@ $this->section('content');
                         <div class="nama-nav">
                             <h6>Daftar Buku</h6>
                         </div>
+                    </div>
+
+                    <div class="col-12 mt-3 mb-3">
+                        <a href="<?= base_url('/teacher/perpus/add') ?>" class="btn btn-primary">Tambah Buku</a>
                     </div>
 
                     <div class="col-12">

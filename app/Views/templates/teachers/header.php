@@ -8,7 +8,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a href="" class="nav-link nav-name disabled"><?= session()->get('name') ?></a>
+                        <a href="<?= base_url('/teacher/perpus') ?>" class="nav-link nav-name">Perpustakaan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link nav-name disabled"><?= session()->get('name') ?></a>
                     </li>
                     <li class="nav-item dropdown">
                         <div class="img-profile" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
