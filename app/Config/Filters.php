@@ -10,6 +10,7 @@ use App\Filters\Role2Filter;
 use App\Filters\RoleFilter;
 use App\Filters\UnoFilter;
 use App\Filters\UrlFilter;
+use App\Filters\UrlFilter2;
 use App\Filters\UserFilter;
 use CodeIgniter\Config\BaseConfig;
 use CodeIgniter\Filters\CSRF;
@@ -39,6 +40,7 @@ class Filters extends BaseConfig
         'UserFilter'    => UserFilter::class,
         'UnoFilter'     => UnoFilter::class,
         'UrlFilter'     => UrlFilter::class,
+        'UrlFilter2'    => UrlFilter2::class,
         'NoAd'          => NoAd::class,
         'AdFil'         => AdFil::class,
     ];

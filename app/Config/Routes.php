@@ -80,7 +80,6 @@ $routes->group('', ['filter' => 'AuthFilter'], function ($routes) {
 });
 
 $routes->match(['get', 'post'], '/admin/login', 'AdminAuth::index', ['filter' => 'NoAd']);
-$routes->match(['get', 'post'], '/registrasi/add', 'AdminAuth::add');
 
 $routes->group('admin', ['filter' => 'AdFil'], function ($routes) {
     // LOGOUT
@@ -121,6 +120,7 @@ $routes->group('admin', ['filter' => 'AdFil'], function ($routes) {
 });
 
 $routes->get('/', 'Users::index', ['filter' => 'UrlFilter']);
+$routes->get('/admin', 'Users::index', ['filter' => 'UrlFilter2']);
 
 /*
  * --------------------------------------------------------------------
