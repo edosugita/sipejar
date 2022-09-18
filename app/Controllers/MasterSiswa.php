@@ -81,7 +81,7 @@ class MasterSiswa extends BaseController
                     'email' => $this->request->getVar('email'),
                     'nama_siswa' => $this->request->getVar('name'),
                     'password' => Hash::make($this->request->getVar('password')),
-
+                    'picture' => 'user.png'
                 ];
 
                 // dd($newData);
@@ -184,7 +184,6 @@ class MasterSiswa extends BaseController
                     'email' => $this->request->getVar('email'),
                     'NIS' => $this->request->getVar('nis'),
                     'password' => $password,
-                    'picture' => 'user.png'
                 ];
 
                 // dd($newData);
