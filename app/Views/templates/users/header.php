@@ -7,27 +7,22 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto">
-                    <?php if (session()->get('loggedSiswa') == 1 || session()->get('loggedUser') == 1) : ?>
-                        <li class="nav-item">
-                            <a href="<?= base_url('/perpustakaan') ?>" class="nav-link nav-name">Perpus</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link nav-name disabled"><?= session()->get('name') ?></a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <div class="img-profile" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="<?= base_url('assets/content/images/user.png') ?>" alt="">
-                            </div>
+                    <li class="nav-item">
+                        <a href="<?= base_url('/perpustakaan') ?>" class="nav-link nav-name">Perpustakaan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link nav-name disabled"><?= session()->get('name') ?></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <div class="img-profile" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="<?= base_url('assets/content/images/user.png') ?>" alt="">
+                        </div>
 
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="<?= base_url('/user/logout') ?>">Logout</a></li>
-                            </ul>
-                        </li>
-                    <?php else : ?>
-                        <li class="nav-item">
-                            <a href="<?= base_url() ?>" class="nav-link nav-name">Login</a>
-                        </li>
-                    <?php endif; ?>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="<?= base_url('/setting') ?>">Setting</a></li>
+                            <li><a class="dropdown-item" href="<?= base_url('/user/logout') ?>">Logout</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>

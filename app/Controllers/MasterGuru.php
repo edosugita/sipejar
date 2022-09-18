@@ -71,7 +71,8 @@ class MasterGuru extends BaseController
                     'email' => $this->request->getVar('email'),
                     'name' => $this->request->getVar('name'),
                     'password' => Hash::make($this->request->getVar('password')),
-
+                    'bg_image' => 'bg_white.jpg',
+                    'picture' => 'user.png'
                 ];
 
                 // dd($newData);

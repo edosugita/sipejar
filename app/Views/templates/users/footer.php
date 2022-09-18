@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-sm-12 mb-3">
-                <h5>Sipejar</h5>
+                <h5>SAE</h5>
                 <div class="line"></div>
                 <a class="link-footer" href="">About Us</a>
                 <a class="link-footer" href="">Our Service</a>
