@@ -1,7 +1,7 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand" href="<?= base_url('/teacher') ?>">SIPEJAR</a>
+            <a class="navbar-brand" href="<?= base_url('/teacher') ?>">SAE</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -20,7 +20,7 @@
                             </div>
 
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="<?= base_url('/logout') ?>">Logout</a></li>
+                                <li><a class="dropdown-item" href="<?= base_url('/user/logout') ?>">Logout</a></li>
                             </ul>
                         </li>
                     <?php else : ?>

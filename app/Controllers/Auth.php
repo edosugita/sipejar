@@ -86,8 +86,8 @@ class Auth extends BaseController
 
     public function logout()
     {
-        if (session()->has('loggedUser')) {
-            session()->remove(['loggedUser', 'loggedsiswa', 'id', 'email', 'name', 'picture', 'role', 'bg_color', 'bg_image']);
+        if (session()->has('loggedSiswa')) {
+            session()->remove(['loggedSiswa', 'id', 'email', 'name', 'picture', 'role', 'bg_color', 'bg_image']);
             return redirect()->to('/login?access=out')->with('fail', 'Kamu berhasil keluar');
         }
     }

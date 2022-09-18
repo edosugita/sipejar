@@ -31,7 +31,7 @@
 
             <div class="col-12">
                 <div class="copy-right">
-                    <span>Copyright &copy; <?= date("Y"); ?> Sipejar</span>
+                    <span>Copyright &copy; <?= date("Y"); ?> <i>Student Activity & Education</i></span>
                 </div>
             </div>
         </div>

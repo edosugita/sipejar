@@ -2,7 +2,9 @@
 
 namespace Config;
 
+use App\Filters\AdFil;
 use App\Filters\AuthFilter;
+use App\Filters\NoAd;
 use App\Filters\NoAuthFilter;
 use App\Filters\Role2Filter;
 use App\Filters\RoleFilter;
@@ -37,6 +39,8 @@ class Filters extends BaseConfig
         'UserFilter'    => UserFilter::class,
         'UnoFilter'     => UnoFilter::class,
         'UrlFilter'     => UrlFilter::class,
+        'NoAd'          => NoAd::class,
+        'AdFil'         => AdFil::class,
     ];
 
     /**
