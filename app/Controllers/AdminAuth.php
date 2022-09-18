@@ -71,7 +71,7 @@ class AdminAuth extends BaseController
             }
         }
 
-        return view('Auth/Admin/index', $data);
+        return view('auth/Admin/index', $data);
     }
 
     public function data($admin)
