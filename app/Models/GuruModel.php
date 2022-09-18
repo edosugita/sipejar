@@ -14,7 +14,7 @@ class GuruModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['name', 'bg_image', 'bg_color', 'picture', 'password'];
+    protected $allowedFields    = ['name', 'email', 'bg_image', 'bg_color', 'picture', 'password'];
 
     // Dates
     protected $useTimestamps = true;

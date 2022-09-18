@@ -79,8 +79,48 @@ $routes->group('', ['filter' => 'AuthFilter'], function ($routes) {
     });
 });
 
+$routes->match(['get', 'post'], '/admin/login', 'AdminAuth::index', ['filter' => 'NoAd']);
+$routes->match(['get', 'post'], '/registrasi/add', 'AdminAuth::add');
 
-$routes->get('/', 'AdminDashboard::index', ['filter' => 'UrlFilter']);
+$routes->group('admin', ['filter' => 'AdFil'], function ($routes) {
+    // LOGOUT
+    $routes->get('logout', 'AdminAuth::logout');
+
+    $routes->get('dashboard', 'Admin::index');
+
+    $routes->group('master', function ($routes) {
+        $routes->get('/', 'MasterAdmin::index');
+        $routes->get('(:num)/view', 'MasterAdmin::view/$1');
+        $routes->match(['get', 'post'], '(:num)/edit', 'MasterAdmin::edit/$1');
+        $routes->match(['get', 'post'], 'delete', 'MasterAdmin::delete');
+        $routes->match(['get', 'post'], 'add', 'MasterAdmin::add');
+    });
+
+    $routes->group('siswa', function ($routes) {
+        $routes->get('/', 'MasterSiswa::index');
+        $routes->get('(:num)/view', 'MasterSiswa::view/$1');
+        $routes->match(['get', 'post'], '(:num)/edit', 'MasterSiswa::edit/$1');
+        $routes->match(['get', 'post'], 'delete', 'MasterSiswa::delete');
+        $routes->match(['get', 'post'], 'add', 'MasterSiswa::add');
+    });
+
+    $routes->group('guru', function ($routes) {
+        $routes->get('/', 'MasterGuru::index');
+        $routes->get('(:num)/view', 'MasterGuru::view/$1');
+        $routes->match(['get', 'post'], '(:num)/edit', 'MasterGuru::edit/$1');
+        $routes->match(['get', 'post'], 'delete', 'MasterGuru::delete');
+        $routes->match(['get', 'post'], 'add', 'MasterGuru::add');
+    });
+
+    $routes->group('kelas', function ($routes) {
+        $routes->get('/', 'MasterKelas::index');
+        $routes->match(['get', 'post'], '(:num)/edit', 'MasterKelas::edit/$1');
+        $routes->match(['get', 'post'], 'delete', 'MasterKelas::delete');
+        $routes->match(['get', 'post'], 'add', 'MasterKelas::add');
+    });
+});
+
+$routes->get('/', 'Users::index', ['filter' => 'UrlFilter']);
 
 /*
  * --------------------------------------------------------------------

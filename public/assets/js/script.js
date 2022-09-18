@@ -1,3 +1,18 @@
+$('#data-table').DataTable();
+$('.select2').select2();
+$('.datepicker-input').datepicker();
+new Quill('#editor', {
+    theme: 'snow'
+});
+
+
+const tampil = () => {
+  const data = document.getElementById('data').value.replace(/\s/g, "").toLowerCase();
+  const hasil = document.getElementById('hasil').value = data;
+
+  return hasil;
+};
+
 let list = document.querySelectorAll('.list');
 
 for (let i = 0; i < list.length; i++) {

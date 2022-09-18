@@ -17,7 +17,7 @@ class KelasModel extends Model
     protected $allowedFields    = ['id_matkul', 'id_siswa'];
 
     // Dates
-    protected $useTimestamps = false;
+    protected $useTimestamps = true;
     protected $dateFormat    = 'datetime';
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';
@@ -53,5 +53,12 @@ class KelasModel extends Model
     public function getInfoKelas($id)
     {
         return $this->db->table('kelas')->join('matkul', 'kelas.id_matkul = matkul.id_matkul')->where(['id_siswa' => $id])->get()->getResultArray();
+    }
+
+    public function getKeAll()
+    {
+        return $this->db->table('kelas')
+            ->join('matkul', 'kelas.id_matkul = matkul.id_matkul')
+            ->join('siswa', 'kelas.id_siswa = siswa.id_siswa')->get()->getResultArray();
     }
 }
