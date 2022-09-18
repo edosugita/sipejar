@@ -4,17 +4,17 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class TugasModel extends Model
+class CommentModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'tugas';
-    protected $primaryKey       = 'id_tugas';
+    protected $table            = 'comment';
+    protected $primaryKey       = 'id_comment';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id_matkul', 'pertemuan', 'nama_materi', 'deskripsi', 'absen', 'diskusi', 'pengumpulan', 'ujian', 'link', 'file'];
+    protected $allowedFields    = ['id_diskusi', 'nama', 'topik'];
 
     // Dates
     protected $useTimestamps = true;
@@ -39,14 +39,4 @@ class TugasModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
-
-    public function getMatkul($slug)
-    {
-        return $this->db->table('tugas')->join('matkul', 'tugas.id_matkul = matkul.id_matkul')->where(['slug' => $slug])->get()->getResultArray();
-    }
-
-    public function getMatkull($id)
-    {
-        return $this->db->table('tugas')->join('matkul', 'tugas.id_matkul = matkul.id_matkul')->where(['tugas.id_tugas' => $id])->get()->getResultArray();
-    }
 }

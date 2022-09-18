@@ -7,7 +7,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto">
-                    <?php if (session()->get('loggedSiswa') == 1) : ?>
+                    <?php if (session()->get('loggedSiswa') == 1 || session()->get('loggedUser') == 1) : ?>
                         <li class="nav-item">
                             <a href="<?= base_url('/perpustakaan') ?>" class="nav-link nav-name">Perpus</a>
                         </li>

@@ -87,6 +87,21 @@ $this->section('content');
                                             </div>
                                         </div>
                                     <?php endif;  ?>
+                                    <?php if ($data['diskusi'] !== null) : ?>
+                                        <div class="col-10">
+                                            <a style="text-decoration: none;" class="matkul-form" href="<?= base_url('/teacher/matakuliah/diskusi/' . $data['id_tugas']) ?>/">
+                                                <i class="fas fa-comments"></i>
+                                                Diskusi
+                                            </a>
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="matkul-check-list d-flex">
+                                                <div class="form-check ms-auto">
+                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php endif;  ?>
                                     <?php if ($data['ujian'] !== null) : ?>
                                         <div class="col-12">
                                             <div class="row">
