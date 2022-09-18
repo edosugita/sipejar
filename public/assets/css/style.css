@@ -444,7 +444,7 @@
   border: 2px dashed #6990F2;
 }
 
-form :where(i, p) {
+form :where(i, a) {
   color: #6990F2;
 }
 

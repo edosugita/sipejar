@@ -89,6 +89,7 @@ class TugasSiswa extends BaseController
                     'nama_materi' => $this->request->getVar('name'),
                     'deskripsi' => $this->request->getVar('desc'),
                     'absen' => $this->request->getVar('absen'),
+                    'diskusi' => $this->request->getVar('diskusi'),
                     'pengumpulan' => $this->request->getVar('tugas'),
                     'ujian' => $this->request->getVar('uas'),
                     'link' => $link,

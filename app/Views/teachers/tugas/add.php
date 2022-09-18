@@ -66,6 +66,14 @@ $this->section('content');
                                 </div>
                                 <div class="mb-3">
                                     <div class="form-check">
+                                        <input class="form-check-input" style="cursor: pointer;" type="checkbox" value="1" name="diskusi" id="diskusi">
+                                        <label class="form-check-label" for="diskusi" style="cursor: pointer;">
+                                            Diskusi
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="form-check">
                                         <input class="form-check-input" style="cursor: pointer;" type="checkbox" value="1" name="tugas" id="tugas">
                                         <label class="form-check-label" for="tugas" style="cursor: pointer;">
                                             Pengumpulan Tugas
