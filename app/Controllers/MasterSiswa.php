@@ -184,6 +184,7 @@ class MasterSiswa extends BaseController
                     'email' => $this->request->getVar('email'),
                     'NIS' => $this->request->getVar('nis'),
                     'password' => $password,
+                    'picture' => 'user.png'
                 ];
 
                 // dd($newData);

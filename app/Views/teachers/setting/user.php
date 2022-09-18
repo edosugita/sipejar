@@ -1,5 +1,5 @@
 <?=
-$this->extend('templates/teachers/templates');
+$this->extend('templates/users/templates');
 $this->section('content');
 ?>
 
@@ -27,9 +27,8 @@ $this->section('content');
             <!-- ALERT END -->
 
             <!-- CONTENT -->
-            <form action="<?= base_url('/teacher/setting') ?>" method="post" enctype="multipart/form-data">
+            <form action="<?= base_url('/setting') ?>" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="gambarLama" value="<?= $guru['picture'] ?>">
-                <input type="hidden" name="gambarLama2" value="<?= $guru['bg_image'] ?>">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="bg-white p-3 rounded">
@@ -64,19 +63,6 @@ $this->section('content');
                             <div class="mb-3">
                                 <label class="form-label">Email</label>
                                 <input type="text" class="form-control" name="email" disabled value="<?= session()->get('email') ?>">
-                            </div>
-                            <div class="mb-3">
-                                <label>Bacground</label><br>
-                                <div class="preview mt-3 mb-3">
-                                    <img class="img-preview" alt="">
-                                </div>
-                                <div class="custom-file">
-                                    <input type="file" class="form-control <?= (isset($validation)) ? ($validation->hasError('gambar')) ? 'is-invalid' : null : null ?>" id="gambar" name="gambar" onchange="previewBg()" value="<?= set_value('gambar') ?>">
-                                    <div class="invalid-feedback">
-                                        <?= (isset($validation)) ? ($validation->getError('gambar')) : null ?>
-                                    </div>
-                                    <label class="custom-file-label" for="gambar" hidden>Pilih Gambar</label>
-                                </div>
                             </div>
                             <div class="mb-3">
                                 <label>Password</label>
