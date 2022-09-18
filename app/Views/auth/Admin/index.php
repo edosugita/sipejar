@@ -6,7 +6,8 @@ $this->section('content');
 <div class="app">
     <div class="auth-left">
         <div class="left-top">
-            <h1><i>SAE</i></h1>
+            <h1>SAE</h1>
+            <p>Student Activity & Education</p>
         </div>
         <div class="left-center">
             <div class="left-text">
