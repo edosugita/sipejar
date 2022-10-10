@@ -20,7 +20,7 @@
     <script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
 </head>
 
-<body class="bg-white">
+<body style="background-color: #FFEDF3;">
     <!-- HEADER -->
     <?= $this->include('templates/users/header') ?>
     <!-- END HEADER -->
