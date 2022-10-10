@@ -17,7 +17,7 @@
 
 <?php if ($guru['bg_image'] == null) : ?>
 
-    <body class="bg-white">
+    <body style="background-color: #FFEDF3;">
         <!-- HEADER -->
         <?= $this->include('templates/teachers/header') ?>
         <!-- END HEADER -->
