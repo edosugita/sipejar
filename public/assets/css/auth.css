@@ -31,6 +31,7 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 20px 20px 0px 20px;
+    background-color: #ffffff;
 }
 
 .left-text {
@@ -72,7 +73,26 @@
         width: 100%;
         height: 50%;
         background-color: #038456;
-        background-image: url('../img/image-auth.png');
+        background-image: url('../image/student.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+
+    .auth-right-admin {
+        width: 100%;
+        height: 50%;
+        background-color: #038456;
+        background-image: url('../image/admin.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    
+    .auth-right-teacher {
+        width: 100%;
+        height: 50%;
+        background-color: #038456;
+        background-image: url('../image/teacher.jpg');
+        background-position: center;
         background-size: cover;
     }
 
@@ -100,7 +120,24 @@
         width: 100%;
         height: 100%;
         background-color: #038456;
-        background-image: url('../image/image-auth.png');
+        background-image: url('../image/student.jpg');
+        background-position: center;
+    }
+
+    .auth-right-admin {
+        width: 100%;
+        height: 100%;
+        background-color: #038456;
+        background-image: url('../image/admin.jpg');
+        background-position: center;
+    }
+
+    .auth-right-teacher {
+        width: 100%;
+        height: 100%;
+        background-color: #038456;
+        background-image: url('../image/teacher.jpg');
+        background-position: center;
     }
 
     .auth-left {

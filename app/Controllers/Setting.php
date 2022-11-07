@@ -42,21 +42,13 @@ class Setting extends BaseController
                         'mime_in' => 'Yang anda pilih bukan gambar',
                     ],
                 ],
-                'gambar' => [
-                    'rules' => 'max_size[gambar,2048]|is_image[gambar]|mime_in[gambar,image/jpg,image/jpeg,image/png]',
-                    'errors' => [
-                        'max_size' => 'Ukuran gambar profile terlalu besar',
-                        'is_image' => 'Yang anda pilih bukan gambar',
-                        'mime_in' => 'Yang anda pilih bukan gambar',
-                    ],
-                ],
             ]);
 
             if (!$validation) {
                 $data['validation'] = $this->validator;
             } else {
                 $fileSampul1 = $this->request->getFile('sampul');
-                $fileSampul2 = $this->request->getFile('gambar');
+                // $fileSampul2 = $this->request->getFile('gambar');
 
                 if ($fileSampul1->getError() == 4) {
                     $namaSampul1 = $this->request->getVar('gambarLama');
@@ -68,15 +60,15 @@ class Setting extends BaseController
                     }
                 }
 
-                if ($fileSampul2->getError() == 4) {
-                    $namaSampul2 = $this->request->getVar('gambarLama2');
-                } else {
-                    $namaSampul2 = $fileSampul2->getRandomName();
-                    $fileSampul2->move('assets/content/images', $namaSampul2);
-                    if ($this->request->getVar('gambarLama2') !== 'bg_white.jpg') {
-                        unlink('assets/content/images/' . $this->request->getVar('gambarLama2'));
-                    }
-                }
+                // if ($fileSampul2->getError() == 4) {
+                //     $namaSampul2 = $this->request->getVar('gambarLama2');
+                // } else {
+                //     $namaSampul2 = $fileSampul2->getRandomName();
+                //     $fileSampul2->move('assets/content/images', $namaSampul2);
+                //     if ($this->request->getVar('gambarLama2') !== 'bg_white.jpg') {
+                //         unlink('assets/content/images/' . $this->request->getVar('gambarLama2'));
+                //     }
+                // }
 
                 $password = $this->request->getVar('password');
 
@@ -90,7 +82,7 @@ class Setting extends BaseController
                 $newData = [
                     'name' => $this->request->getVar('name'),
                     'picture' => $namaSampul1,
-                    'bg_image' => $namaSampul2,
+                    // 'bg_image' => $namaSampul2,
                     'password' => $password
                 ];
 

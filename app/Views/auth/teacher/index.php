@@ -64,7 +64,7 @@ $this->section('content');
             <p>Copyright © <?= date('Y'); ?> <i>Student Activity & Education</i>.</p>
         </div>
     </div>
-    <div class="auth-right">
+    <div class="auth-right-teacher">
 
     </div>
 </div>

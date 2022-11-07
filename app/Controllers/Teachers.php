@@ -160,20 +160,6 @@ class Teachers extends BaseController
         return view('teachers/tugas/add', $data);
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     public function MatkulInfo($slug)
     {
         $matkul = $this->matkulModel->getMatkul($slug);

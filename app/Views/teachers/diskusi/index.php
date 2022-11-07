@@ -1,110 +1,102 @@
 <?=
-$this->extend('templates/users/templates');
+$this->extend('Layout/Teacher/templates');
 $this->section('content');
 ?>
 
-<main class="mt-3">
-    <div class="container">
-        <div class="row">
-            <!-- ALERT START -->
-            <?php if (!empty(session()->getFlashdata('fail'))) : ?>
-                <div class="col-12">
-                    <div class="alert alert-danger alert-dismissible fade show">
-                        <?= session()->getFlashdata('fail'); ?>
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                </div>
-            <?php endif; ?>
-            <?php if (!empty(session()->getFlashdata('success'))) : ?>
-                <div class="col-12">
-                    <div class="alert alert-success alert-dismissible fade show">
-                        <?= session()->getFlashdata('success'); ?>
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                </div>
-            <?php endif; ?>
-            <!-- ALERT END -->
-
-            <!-- CONTENT -->
-            <div class="col-md-9 col-12">
-                <div class="row">
-
-                    <div class="col-12">
-                        <div class="nama-nav">
-                            <h6>Diskusi Materi <?= $tugas['nama_materi'] ?></h6>
+<div class="main-content">
+    <div class="row">
+        <div class="col-md-12 col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="jumbotron jumbotron-fluid">
+                        <div class="container">
+                            <h1 class="display-4">Kalau impianmu tak bisa membuatmu takut, mungkin karena impianmu tak cukup besar.</h1>
+                            <p class="lead">- Muhammad Ali</p>
                         </div>
                     </div>
 
-                    <?php if (session()->get('role') == 'guru') : ?>
-                        <div class="col-12 mt-3 mb-3">
-                            <a href="<?= base_url('/teacher/matakuliah/diskusi/' . $tugas['id_tugas'] . '/add') ?>" class="btn btn-primary">Tambah Diskusi</a>
+                    <section class="lp-mobile-view">
+                        <div class="container">
+                            <h4>Kalau impianmu tak bisa membuatmu takut, mungkin karena impianmu tak cukup besar.</h4>
+                            <p>- Muhammad Ali</p>
                         </div>
-                    <?php endif; ?>
+                    </section>
 
-                    <?php foreach ($diskusi as $data) : ?>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5>Diskusi Materi <?= $tugas['nama_materi'] ?></h5>
+                        <a class="btn btn-santri btn-hover-santri" href="<?= base_url('/teacher/matakuliah/diskusi/' . $tugas['id_tugas'] . '/add') ?>">Tambah Diskusi</a>
+                    </div>
+                    <hr>
+                    <?php if (!empty(session()->getFlashdata('success'))) : ?>
                         <div class="col-12">
-                            <div class="p-4" style="border: 1px solid #dbdbdb; border-radius: 5px;">
-                                <div class="row ">
-                                    <div class="col-12 col-md-6">
-                                        <?= $data['nama'] ?>
-                                    </div>
-                                    <div class="col-12 col-md-6 text-end">
-                                        <?= date('j F Y', strtotime($data['created_at'])) ?>
-                                    </div>
-                                    <div class="col-12 mt-4">
-                                        <?= $data['topik'] ?>
-                                    </div>
-                                    <div class="col-12 d-flex justify-content-end">
-                                        <a href="<?= base_url('/diskusi/view/' . $data['id']) ?>" class="btn btn-primary">Diskusi</a>
-                                    </div>
-                                </div>
-
+                            <div class="alert alert-success alert-dismissible fade show">
+                                <?= session()->getFlashdata('success'); ?>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
                             </div>
                         </div>
-                    <?php endforeach; ?>
-                </div>
-            </div>
-            <!-- RIGHT BAR -->
-            <div class="col-md-3 col-12">
-
-                <div class="col-12">
-                    <div class="nama-nav">
-                        <h6>calendar</h6>
-                    </div>
-                </div>
-
-                <div class="calendar">
-                    <div class="month">
-                        <i class="fas fa-angle-left prev"></i>
-                        <div class="date">
-                            <h6></h6>
+                    <?php endif; ?>
+                    <?php if (!empty(session()->getFlashdata('fail'))) : ?>
+                        <div class="col-12">
+                            <div class="alert alert-danger alert-dismissible fade show">
+                                <?= session()->getFlashdata('fail'); ?>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
                         </div>
-                        <i class="fas fa-angle-right next"></i>
-                    </div>
-                    <div class="weekdays">
-                        <div>Sun</div>
-                        <div>Mon</div>
-                        <div>Tue</div>
-                        <div>Wed</div>
-                        <div>Thu</div>
-                        <div>Fri</div>
-                        <div>Sat</div>
-                    </div>
-                    <div class="days"></div>
-                </div>
+                    <?php endif; ?>
+                    <?php if (!empty(session()->getFlashdata('modalSuccess'))) : ?>
+                        <div class="modal fade" id="infaq-santri">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content" style="border-radius: 12px; overflow:hidden;">
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+                                            <span class="sr-only"></span>
+                                        </div>
+                                    </div>
+                                    <div class="modal-body text-center">
+                                        <img src="<?= base_url('/assets/img/success-image.svg') ?>" class="mb-5">
+                                        <h5>Data berhasil di proses</h5>
+                                        <p><?= session()->getFlashdata('modalSuccess') ?></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                    <div class="m-t-10">
+                        <div class="content-info-jurnal">
+                            <div class="row">
 
+                                <?php foreach ($diskusi as $data) : ?>
+                                    <div class="col-12">
+                                        <div class="p-4" style="border: 1px solid #ebebeb; border-radius: 5px;">
+                                            <div class="row ">
+                                                <div class="col-12 col-md-6">
+                                                    <?= $data['nama'] ?>
+                                                </div>
+                                                <div class="col-12 col-md-6 d-flex justify-content-end">
+                                                    <?= date('j F Y', strtotime($data['created_at'])) ?>
+                                                </div>
+                                                <div class="col-12 mt-4">
+                                                    <?= $data['topik'] ?>
+                                                </div>
+                                                <div class="col-12 d-flex justify-content-end">
+                                                    <a href="<?= base_url('/diskusi/view/' . $data['id']) ?>" class="btn btn-primary">Diskusi</a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</main>
-
-<?=
-$this->endSection();
-
-// JS
-$this->section('js');
-?>
-
-<script src="<?= base_url() ?>/assets/js/calender.js"></script>
+</div>
 
 <?= $this->endSection(); ?>

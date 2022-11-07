@@ -41,7 +41,8 @@ $routes->group('', ['filter' => 'UserFilter'], function ($routes) {
     $routes->match(['get', 'post'], '/pelajaran/tugas/(:num)/(:segment)/remove', 'Users::remove/$1');
     $routes->match(['get', 'post'], '/pelajaran/tugas/(:num)/(:segment)/edit', 'Users::edit/$1');
 
-    $routes->match(['get', 'post'], '/pelajaran/diskusi/(:num)', 'Diskusi::index/$1');
+    $routes->match(['get', 'post'], '/pelajaran/diskusi/(:num)', 'Diskusi::users/$1');
+    $routes->match(['get', 'post'], '/diskusi/view/(:num)', 'Comment::users/$1');
 
     $routes->get('/pengumpulan', 'Users::pengumpulan');
 
@@ -57,7 +58,6 @@ $routes->get('/register', 'Auth::register');
 // TEACHER
 
 $routes->match(['get', 'post'], '/teacher/login', 'TeachersAuth::index');
-$routes->match(['get', 'post'], '/diskusi/view/(:num)', 'Comment::index/$1');
 
 $routes->group('', ['filter' => 'AuthFilter'], function ($routes) {
     $routes->match(['get', 'post'], '/logout', 'TeachersAuth::logout');
@@ -79,7 +79,7 @@ $routes->group('', ['filter' => 'AuthFilter'], function ($routes) {
 
         $routes->match(['get', 'post'], 'matakuliah/diskusi/(:num)', 'Diskusi::index/$1');
         $routes->match(['get', 'post'], 'matakuliah/diskusi/(:num)/add', 'Diskusi::add/$1');
-
+        $routes->match(['get', 'post'], '/diskusi/view/(:num)', 'Comment::index/$1');
 
         $routes->match(['get', 'post'], 'perpus', 'Perpus::teacher');
         $routes->match(['get', 'post'], 'perpus/add', 'Perpus::add');

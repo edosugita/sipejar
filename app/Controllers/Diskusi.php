@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\DiskusiModel;
+use App\Models\GuruModel;
 use App\Models\TugasModel;
 
 class Diskusi extends BaseController
@@ -12,23 +13,40 @@ class Diskusi extends BaseController
         helper(['form', 'url']);
         $this->tugas = new TugasModel();
         $this->diskusi = new DiskusiModel();
+        $this->guru = new GuruModel();
     }
 
     public function index($id)
     {
+        $idG = session()->get('id');
         $data = [
             'title' => 'Diskusi',
             'tugas' => $this->tugas->find($id),
             'diskusi' => $this->diskusi->where(['id_tugas' => $id])->get()->getResultArray(),
+            'guru' => $this->guru->find($idG),
         ];
         return view('teachers/diskusi/index', $data);
     }
 
+    public function users($id)
+    {
+        $idG = session()->get('id');
+        $data = [
+            'title' => 'Diskusi',
+            'tugas' => $this->tugas->find($id),
+            'diskusi' => $this->diskusi->where(['id_tugas' => $id])->get()->getResultArray(),
+            'guru' => $this->guru->find($idG),
+        ];
+        return view('users/diskusi/index', $data);
+    }
+
     public function add($id)
     {
+        $idG = session()->get('id');
         $data = [
             'title' => 'Tambah Diskusi',
             'idTugas' => $id,
+            'guru' => $this->guru->find($idG),
         ];
 
         if ($this->request->getMethod() == 'post') {

@@ -6,7 +6,7 @@ $this->section('content');
 <div class="app">
     <div class="auth-left">
         <div class="left-top">
-            <h1>SAE</h1>
+            <h1>SAE Admin</h1>
             <p>Student Activity & Education</p>
         </div>
         <div class="left-center">
@@ -64,7 +64,7 @@ $this->section('content');
             <p>Copyright © <?= date('Y'); ?> <i>Student Activity & Education</i>.</p>
         </div>
     </div>
-    <div class="auth-right">
+    <div class="auth-right-admin">
 
     </div>
 </div>

@@ -1,42 +1,58 @@
 <?=
-$this->extend('templates/users/templates');
+$this->extend('Layout/Teacher/templates');
 $this->section('content');
 ?>
 
-<main class="mt-3">
-    <div class="container">
-        <div class="row">
-            <!-- ALERT START -->
-            <?php if (!empty(session()->getFlashdata('fail'))) : ?>
-                <div class="col-12">
-                    <div class="alert alert-danger alert-dismissible fade show">
-                        <?= session()->getFlashdata('fail'); ?>
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+<div class="main-content">
+    <div class="row">
+        <div class="col-md-12 col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5>Tambah Topik Diskusi</h5>
                     </div>
-                </div>
-            <?php endif; ?>
-            <?php if (!empty(session()->getFlashdata('success'))) : ?>
-                <div class="col-12">
-                    <div class="alert alert-success alert-dismissible fade show">
-                        <?= session()->getFlashdata('success'); ?>
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                </div>
-            <?php endif; ?>
-            <!-- ALERT END -->
-
-            <!-- CONTENT -->
-            <div class="col-md-9 col-12">
-                <div class="row">
-
-                    <div class="col-12">
-                        <div class="nama-nav">
-                            <h6>Tambah Diskusi</h6>
+                    <hr>
+                    <?php if (!empty(session()->getFlashdata('success'))) : ?>
+                        <div class="col-12">
+                            <div class="alert alert-success alert-dismissible fade show">
+                                <?= session()->getFlashdata('success'); ?>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="col-12">
+                    <?php endif; ?>
+                    <?php if (!empty(session()->getFlashdata('fail'))) : ?>
+                        <div class="col-12">
+                            <div class="alert alert-danger alert-dismissible fade show">
+                                <?= session()->getFlashdata('fail'); ?>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                    <?php if (!empty(session()->getFlashdata('modalSuccess'))) : ?>
+                        <div class="modal fade" id="infaq-santri">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content" style="border-radius: 12px; overflow:hidden;">
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+                                            <span class="sr-only"></span>
+                                        </div>
+                                    </div>
+                                    <div class="modal-body text-center">
+                                        <img src="<?= base_url('/assets/img/success-image.svg') ?>" class="mb-5">
+                                        <h5>Data berhasil di proses</h5>
+                                        <p><?= session()->getFlashdata('modalSuccess') ?></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                    <div class="m-t-10">
                         <form action="<?= base_url('/teacher/matakuliah/diskusi/' . $idTugas . '/add') ?>" method="post" onsubmit="mySubmit()">
+                            <?= csrf_field() ?>
                             <div class="mb-3">
                                 <label class="form-label">Nama</label>
                                 <input type="text" class="form-control bg-white" value="<?= session()->get('name') ?>" disabled>
@@ -52,9 +68,11 @@ $this->section('content');
 
                             <div class="mb-3">
                                 <div class="row">
-                                    <div class="col-12 d-flex justify-content-end">
-                                        <button type="button" c onclick="history.back()" class="btn btn-secondary me-2" data-bs-dismiss="modal">Close</button>
-                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                    <div class="col-12 d-flex justify-content-end p-h-30">
+                                        <div class="row">
+                                            <button type="button" class="btn m-r-10 btn-hover-santri" style="border: 1px solid #049F67; color: #049F67;" onclick="history.go(-1);">Cancel</button>
+                                            <button type="submit" class="btn btn-santri btn-hover-santri">Save</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -62,47 +80,12 @@ $this->section('content');
                     </div>
                 </div>
             </div>
-            <!-- RIGHT BAR -->
-            <div class="col-md-3 col-12">
-
-                <div class="col-12">
-                    <div class="nama-nav">
-                        <h6>calendar</h6>
-                    </div>
-                </div>
-
-                <div class="calendar">
-                    <div class="month">
-                        <i class="fas fa-angle-left prev"></i>
-                        <div class="date">
-                            <h6></h6>
-                        </div>
-                        <i class="fas fa-angle-right next"></i>
-                    </div>
-                    <div class="weekdays">
-                        <div>Sun</div>
-                        <div>Mon</div>
-                        <div>Tue</div>
-                        <div>Wed</div>
-                        <div>Thu</div>
-                        <div>Fri</div>
-                        <div>Sat</div>
-                    </div>
-                    <div class="days"></div>
-                </div>
-
-            </div>
         </div>
     </div>
-</main>
-
-<?=
-$this->endSection();
-
-// JS
-$this->section('js');
-?>
-
-<script src="<?= base_url() ?>/assets/js/calender.js"></script>
+</div>
 
 <?= $this->endSection(); ?>
+
+<?= $this->section('js') ?>
+<script src="<?= base_url('assets/js/editor.js') ?>"></script>
+<?= $this->endSection() ?>
