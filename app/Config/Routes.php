@@ -49,6 +49,7 @@ $routes->group('', ['filter' => 'UserFilter'], function ($routes) {
     $routes->match(['get', 'post'], '/user/logout', 'Auth::logout');
     $routes->match(['get', 'post'], '/perpustakaan', 'Perpus::index');
     $routes->match(['get', 'post'], '/setting', 'Setting::user');
+    $routes->match(['get', 'post'], '/help', 'Help::index');
     //     });
 });
 
@@ -85,6 +86,8 @@ $routes->group('', ['filter' => 'AuthFilter'], function ($routes) {
         $routes->match(['get', 'post'], 'perpus/add', 'Perpus::add');
         // SETTING
         $routes->match(['get', 'post'], 'setting', 'Setting::index');
+
+        $routes->match(['get', 'post'], 'help', 'Help::teacher');
     });
 });
 
@@ -126,10 +129,16 @@ $routes->group('admin', ['filter' => 'AdFil'], function ($routes) {
         $routes->match(['get', 'post'], 'delete', 'MasterKelas::delete');
         $routes->match(['get', 'post'], 'add', 'MasterKelas::add');
     });
+
+    $routes->group('help', function ($routes) {
+        $routes->match(['get', 'post'], 'user', 'AdminHelp::index');
+        $routes->match(['get', 'post'], 'teacher', 'AdminHelp::teacher');
+    });
 });
 
 $routes->get('/', 'Users::index', ['filter' => 'UrlFilter']);
 $routes->get('/admin', 'Users::index', ['filter' => 'UrlFilter2']);
+
 
 /*
  * --------------------------------------------------------------------

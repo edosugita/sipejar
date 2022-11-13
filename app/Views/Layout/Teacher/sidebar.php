@@ -19,7 +19,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="<?= base_url('/help') ?>">
+                <a href="<?= base_url('/teacher/help') ?>">
                     <span class="icon-holder">
                         <i class="anticon anticon-question-circle"></i>
                     </span>

@@ -43,6 +43,29 @@
                     </li>
                 </ul>
             </li>
+            <li class="nav-item dropdown">
+                <a class="dropdown-toggle" href="javascript:void(0);">
+                    <span class="icon-holder">
+                        <i class="anticon anticon-question-circle"></i>
+                    </span>
+                    <span class="title">Edit Help</span>
+                    <span class="arrow">
+                        <i class="arrow-icon"></i>
+                    </span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="<?= base_url('/admin/help/user') ?>">
+                            <span class="title">User</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?= base_url('/admin/help/teacher') ?>">
+                            <span class="title">Teacher</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
         </ul>
     </div>
 </div>
