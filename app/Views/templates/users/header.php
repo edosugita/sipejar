@@ -15,7 +15,7 @@
                     </li>
                     <li class="nav-item dropdown">
                         <div class="img-profile" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="<?= base_url('assets/content/images/user.png') ?>" alt="">
+                            <img src="<?= base_url('assets/content/images/' . session()->get('picture')) ?>" alt="">
                         </div>
 
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">

@@ -44,7 +44,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="<?= base_url('/teacher/setting') ?>" class="dropdown-item d-block p-h-15 p-v-10">
+                    <a href="<?= base_url('/setting') ?>" class="dropdown-item d-block p-h-15 p-v-10">
                         <div class="d-flex align-items-center justify-content-between">
                             <div>
                                 <i class="anticon opacity-04 font-size-16 anticon-setting"></i>
@@ -53,7 +53,7 @@
                             <i class="anticon font-size-10 anticon-right"></i>
                         </div>
                     </a>
-                    <a href="<?= base_url('/logout') ?>" class="dropdown-item d-block p-h-15 p-v-10">
+                    <a href="<?= base_url('/user/logout') ?>" class="dropdown-item d-block p-h-15 p-v-10">
                         <div class="d-flex align-items-center justify-content-between">
                             <div>
                                 <i class="anticon opacity-04 font-size-16 anticon-logout"></i>

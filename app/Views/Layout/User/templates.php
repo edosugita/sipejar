@@ -20,7 +20,7 @@
 
 </head>
 
-<body>
+<body style="background-image: url('<?= base_url('assets/images/avatars/' . session()->get('background')) ?>');">
     <div class="app">
         <div class="layout">
             <?= $this->include('Layout/User/header'); ?>
@@ -32,7 +32,7 @@
                 <!-- Content Wrapper END -->
 
                 <!-- Footer START -->
-                <?= $this->include('Layout/User/footer'); ?>
+                <?= $this->include('Layout/Teacher/footer'); ?>
                 <!-- Footer END -->
             </div>
             <!-- Page Container END -->

@@ -20,7 +20,7 @@
 
 </head>
 
-<body>
+<body style="background-image: url('<?= base_url('assets/images/avatars/' . session()->get('background')) ?>');">
     <div class="app">
         <div class="layout">
             <?= $this->include('Layout/Teacher/header'); ?>

@@ -66,25 +66,6 @@ $this->section('content');
                     <?php endif; ?>
                     <div class="m-t-10">
                         <div class="row">
-                            <!-- ALERT START -->
-                            <?php if (!empty(session()->getFlashdata('fail'))) : ?>
-                                <div class="col-12">
-                                    <div class="alert alert-danger alert-dismissible fade show">
-                                        <?= session()->getFlashdata('fail'); ?>
-                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                    </div>
-                                </div>
-                            <?php endif; ?>
-                            <?php if (!empty(session()->getFlashdata('success'))) : ?>
-                                <div class="col-12">
-                                    <div class="alert alert-success alert-dismissible fade show">
-                                        <?= session()->getFlashdata('success'); ?>
-                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                    </div>
-                                </div>
-                            <?php endif; ?>
-
-                            <!-- CONTENT -->
                             <div class="col-md-9 col-12">
                                 <div class="row">
 

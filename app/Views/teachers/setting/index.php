@@ -98,6 +98,36 @@ $this->section('content');
                                                 <?= (isset($validation)) ? ($validation->getError('cpassword')) : null ?>
                                             </div>
                                         </div>
+                                        <div class="mb-3">
+                                            <label>Background</label>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="radio">
+                                                <input id="default" name="bg" type="radio" value="default.png" <?= session()->get('background') == 'default.png' ? 'checked' : 'null' ?>>
+                                                <label for="default">Default</label>
+                                                <div class="col-12">
+                                                    <img src="<?= base_url('assets/image/Default.png') ?>" alt="" style="width: 100%;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="radio">
+                                                <input id="brown" name="bg" type="radio" value="brown.png" <?= session()->get('background') == 'brown.png' ? 'checked' : 'null' ?>>
+                                                <label for="brown">Brown</label>
+                                                <div class="col-12">
+                                                    <img src="<?= base_url('assets/image/Brown.png') ?>" alt="" style="width: 100%;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="radio">
+                                                <input id="pink" name="bg" type="radio" value="pink.png" <?= session()->get('background') == 'pink.png' ? 'checked' : 'null' ?>>
+                                                <label for="pink">Pink</label>
+                                                <div class="col-12">
+                                                    <img src="<?= base_url('assets/image/Pink.png') ?>" alt="" style="width: 100%;">
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="mt-5">
                                             <div class="row d-flex justify-content-end">
                                                 <button type="button" class="btn m-r-10 btn-hover-santri" style="border: 1px solid #049F67; color: #049F67;" onclick="history.go(-1);">Cancel</button>

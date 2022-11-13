@@ -82,7 +82,7 @@ class Setting extends BaseController
                 $newData = [
                     'name' => $this->request->getVar('name'),
                     'picture' => $namaSampul1,
-                    // 'bg_image' => $namaSampul2,
+                    'bg_image' => $this->request->getVar('bg'),
                     'password' => $password
                 ];
 
@@ -93,7 +93,7 @@ class Setting extends BaseController
                 if (!$query) {
                     return redirect()->back()->with('fail', 'Terdapat kesalahan, silahkan coba lagi!');
                 } else {
-                    return redirect()->to('/teacher/setting')->with('success', 'Profile telah berhasil di update');
+                    return redirect()->to('/logout')->with('success', 'Profile telah berhasil di update');
                 }
             }
         }
@@ -106,7 +106,7 @@ class Setting extends BaseController
         $id = session()->get('id');
 
         $data = [
-            'title' => 'Teacher | Setting',
+            'title' => 'Student | Setting',
             'guru' => $this->siswa->find($id),
         ];
 
@@ -143,6 +143,7 @@ class Setting extends BaseController
                     }
                 }
 
+
                 $password = $this->request->getVar('password');
 
                 if ($password == null) {
@@ -155,7 +156,8 @@ class Setting extends BaseController
                 $newData = [
                     'nama_siswa' => $this->request->getVar('name'),
                     'picture' => $namaSampul1,
-                    'password' => $password
+                    'password' => $password,
+                    'background' => $this->request->getVar('bg'),
                 ];
 
                 // dd($newData);
@@ -165,7 +167,7 @@ class Setting extends BaseController
                 if (!$query) {
                     return redirect()->back()->with('fail', 'Terdapat kesalahan, silahkan coba lagi!');
                 } else {
-                    return redirect()->to('/setting')->with('success', 'Profile telah berhasil di update');
+                    return redirect()->to('/user/logout')->with('success', 'Profile telah berhasil di update, please re-login');
                 }
             }
         }
